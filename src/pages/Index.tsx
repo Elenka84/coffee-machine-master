@@ -3,6 +3,9 @@ import { Card } from "@/components/ui/card";
 import { RequestForm } from "@/components/RequestForm";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { useReveal } from "@/hooks/use-reveal";
+import { useSiteSettings } from "@/hooks/useSiteSettings";
+import { useQuery } from "@tanstack/react-query";
+import { supabase } from "@/integrations/supabase/client";
 import {
   Phone,
   MessageCircle,
@@ -33,10 +36,11 @@ import {
   FileText,
 } from "lucide-react";
 
-const PHONE = "+7 (925) 035-23-22";
-const PHONE_HREF = "tel:+79250352322";
-const WHATSAPP = "https://wa.me/79250352322";
-const TELEGRAM = "https://t.me/coffee_master";
+// Defaults — overridden by site_settings from DB
+const DEFAULT_PHONE = "+7 (925) 035-23-22";
+const DEFAULT_PHONE_HREF = "tel:+79250352322";
+const DEFAULT_WHATSAPP = "https://wa.me/79250352322";
+const DEFAULT_TELEGRAM = "https://t.me/coffee_master";
 
 const services = [
   { icon: Wrench, title: "Диагностика кофемашин" },
@@ -70,7 +74,7 @@ const advantages = [
   { icon: Clock, title: "Быстрая связь", text: "Отвечаю в мессенджерах и беру в работу день в день." },
 ];
 
-const brands = ["Saeco", "De'Longhi", "Philips", "Bosch", "Jura", "Miele", "Siemens", "Melitta", "Electrolux", "Bork", "Breville"];
+const FALLBACK_BRANDS = ["Saeco", "De'Longhi", "Philips", "Bosch", "Jura", "Miele", "Siemens", "Melitta", "Electrolux", "Bork", "Breville"];
 
 const steps = [
   { n: "01", title: "Заявка или звонок", text: "Опишите проблему — подскажу предварительно." },
@@ -79,7 +83,7 @@ const steps = [
   { n: "04", title: "Ремонт", text: "Выполняю ремонт с гарантией на запчасти." },
 ];
 
-const reviews = [
+const FALLBACK_REVIEWS = [
   { name: "Алексей", machine: "Philips 3200", text: "Быстро отремонтировали кофемашину. Перестала подавать воду — поменяли помпу за день. Работает как новая." },
   { name: "Марина", machine: "De'Longhi Magnifica", text: "Устранили протечку, заменили уплотнители. Цена была названа сразу после диагностики, никаких сюрпризов." },
   { name: "Игорь", machine: "Saeco Xelsis", text: "Понравились честные условия и прозрачная цена. Мастер всё показал и объяснил, дал гарантию на запчасти." },
@@ -87,6 +91,34 @@ const reviews = [
 ];
 
 const Index = () => {
+  const { data: settings } = useSiteSettings();
+  const PHONE = settings?.phone ?? DEFAULT_PHONE;
+  const PHONE_HREF = settings?.phone_href ?? DEFAULT_PHONE_HREF;
+  const WHATSAPP = settings?.whatsapp ?? DEFAULT_WHATSAPP;
+  const TELEGRAM = settings?.telegram ?? DEFAULT_TELEGRAM;
+
+  const { data: brandsData } = useQuery({
+    queryKey: ["public-machines"],
+    queryFn: async () => {
+      const { data } = await supabase.from("coffee_machines").select("brand, model, sort").order("sort");
+      return data ?? [];
+    },
+  });
+  const brands = brandsData && brandsData.length > 0
+    ? brandsData.map((b) => b.model ? `${b.brand} ${b.model}` : b.brand)
+    : FALLBACK_BRANDS;
+
+  const { data: reviewsData } = useQuery({
+    queryKey: ["public-reviews"],
+    queryFn: async () => {
+      const { data } = await supabase.from("reviews").select("author, text, sort").eq("published", true).order("sort");
+      return data ?? [];
+    },
+  });
+  const reviews = reviewsData && reviewsData.length > 0
+    ? reviewsData.map((r) => ({ name: r.author, machine: "", text: r.text }))
+    : FALLBACK_REVIEWS;
+
   return (
     <div className="min-h-screen bg-background text-foreground">
       {/* Header */}

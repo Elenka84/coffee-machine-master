@@ -7,6 +7,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
+import { supabase } from "@/integrations/supabase/client";
 
 const schema = z.object({
   name: z.string().trim().min(2, "Введите имя").max(80),
@@ -26,8 +27,17 @@ export const RequestForm = () => {
 
   const consent = form.watch("consent");
 
-  const onSubmit = (values: FormValues) => {
-    console.log("Заявка:", values);
+  const onSubmit = async (values: FormValues) => {
+    const { error } = await supabase.from("requests").insert({
+      name: values.name,
+      phone: values.phone,
+      brand: values.brand || null,
+      problem: values.problem || null,
+    });
+    if (error) {
+      toast.error("Не удалось отправить заявку", { description: error.message });
+      return;
+    }
     toast.success("Заявка отправлена", {
       description: "Свяжусь с вами в ближайшее время.",
     });
