@@ -26,8 +26,17 @@ export const RequestForm = () => {
 
   const consent = form.watch("consent");
 
-  const onSubmit = (values: FormValues) => {
-    console.log("Заявка:", values);
+  const onSubmit = async (values: FormValues) => {
+    const { error } = await supabase.from("requests").insert({
+      name: values.name,
+      phone: values.phone,
+      brand: values.brand || null,
+      problem: values.problem || null,
+    });
+    if (error) {
+      toast.error("Не удалось отправить заявку", { description: error.message });
+      return;
+    }
     toast.success("Заявка отправлена", {
       description: "Свяжусь с вами в ближайшее время.",
     });
