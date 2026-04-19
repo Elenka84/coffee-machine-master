@@ -5,6 +5,7 @@ import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { Checkbox } from "@/components/ui/checkbox";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 
 const schema = z.object({
@@ -12,6 +13,7 @@ const schema = z.object({
   phone: z.string().trim().min(6, "Введите телефон").max(30).regex(/^[\d\s+()\-]+$/, "Только цифры и + ( ) -"),
   brand: z.string().trim().max(60).optional().or(z.literal("")),
   problem: z.string().trim().max(600).optional().or(z.literal("")),
+  consent: z.boolean().refine((v) => v === true, "Необходимо согласие на обработку персональных данных"),
 });
 
 type FormValues = z.infer<typeof schema>;
@@ -19,8 +21,10 @@ type FormValues = z.infer<typeof schema>;
 export const RequestForm = () => {
   const form = useForm<FormValues>({
     resolver: zodResolver(schema),
-    defaultValues: { name: "", phone: "", brand: "", problem: "" },
+    defaultValues: { name: "", phone: "", brand: "", problem: "", consent: false },
   });
+
+  const consent = form.watch("consent");
 
   const onSubmit = (values: FormValues) => {
     console.log("Заявка:", values);
@@ -87,12 +91,36 @@ export const RequestForm = () => {
             </FormItem>
           )}
         />
-        <Button type="submit" size="lg" className="w-full h-12 text-base">
+
+        <FormField
+          control={form.control}
+          name="consent"
+          render={({ field }) => (
+            <FormItem>
+              <div className="flex items-start gap-3 rounded-lg border border-border/60 bg-muted/40 p-4">
+                <FormControl>
+                  <Checkbox
+                    checked={field.value}
+                    onCheckedChange={field.onChange}
+                    className="mt-0.5"
+                  />
+                </FormControl>
+                <FormLabel className="!mt-0 text-sm font-normal leading-relaxed text-foreground cursor-pointer">
+                  Я согласен(на) с{" "}
+                  <a href="#privacy" className="underline underline-offset-4 text-coffee-dark hover:text-coffee-medium">
+                    политикой конфиденциальности
+                  </a>{" "}
+                  и обработкой моих персональных данных (имя и телефон) для связи по заявке.
+                </FormLabel>
+              </div>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+
+        <Button type="submit" size="lg" disabled={!consent} className="w-full h-12 text-base">
           Оставить заявку
         </Button>
-        <p className="text-xs text-muted-foreground text-center">
-          Нажимая кнопку, вы соглашаетесь на обработку персональных данных.
-        </p>
       </form>
     </Form>
   );
