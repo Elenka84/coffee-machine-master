@@ -14,16 +14,246 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      coffee_machines: {
+        Row: {
+          brand: string
+          created_at: string
+          id: string
+          model: string | null
+          sort: number
+        }
+        Insert: {
+          brand: string
+          created_at?: string
+          id?: string
+          model?: string | null
+          sort?: number
+        }
+        Update: {
+          brand?: string
+          created_at?: string
+          id?: string
+          model?: string | null
+          sort?: number
+        }
+        Relationships: []
+      }
+      repairs: {
+        Row: {
+          client_name: string
+          client_phone: string
+          created_at: string
+          fault_reason: string
+          id: string
+          machine_brand: string
+          machine_model: string | null
+          notes: string | null
+          parts_cost: number
+          repaired_at: string
+          request_id: string | null
+          total: number | null
+          updated_at: string
+          work_cost: number
+        }
+        Insert: {
+          client_name: string
+          client_phone: string
+          created_at?: string
+          fault_reason: string
+          id?: string
+          machine_brand: string
+          machine_model?: string | null
+          notes?: string | null
+          parts_cost?: number
+          repaired_at?: string
+          request_id?: string | null
+          total?: number | null
+          updated_at?: string
+          work_cost?: number
+        }
+        Update: {
+          client_name?: string
+          client_phone?: string
+          created_at?: string
+          fault_reason?: string
+          id?: string
+          machine_brand?: string
+          machine_model?: string | null
+          notes?: string | null
+          parts_cost?: number
+          repaired_at?: string
+          request_id?: string | null
+          total?: number | null
+          updated_at?: string
+          work_cost?: number
+        }
+        Relationships: [
+          {
+            foreignKeyName: "repairs_request_id_fkey"
+            columns: ["request_id"]
+            isOneToOne: false
+            referencedRelation: "requests"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      requests: {
+        Row: {
+          brand: string | null
+          created_at: string
+          id: string
+          name: string
+          notes: string | null
+          phone: string
+          problem: string | null
+          status: Database["public"]["Enums"]["request_status"]
+          updated_at: string
+        }
+        Insert: {
+          brand?: string | null
+          created_at?: string
+          id?: string
+          name: string
+          notes?: string | null
+          phone: string
+          problem?: string | null
+          status?: Database["public"]["Enums"]["request_status"]
+          updated_at?: string
+        }
+        Update: {
+          brand?: string | null
+          created_at?: string
+          id?: string
+          name?: string
+          notes?: string | null
+          phone?: string
+          problem?: string | null
+          status?: Database["public"]["Enums"]["request_status"]
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      reviews: {
+        Row: {
+          author: string
+          created_at: string
+          id: string
+          published: boolean
+          rating: number
+          sort: number
+          text: string
+          updated_at: string
+        }
+        Insert: {
+          author: string
+          created_at?: string
+          id?: string
+          published?: boolean
+          rating?: number
+          sort?: number
+          text: string
+          updated_at?: string
+        }
+        Update: {
+          author?: string
+          created_at?: string
+          id?: string
+          published?: boolean
+          rating?: number
+          sort?: number
+          text?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      services: {
+        Row: {
+          created_at: string
+          description: string | null
+          id: string
+          price_from: number | null
+          price_to: number | null
+          sort: number
+          title: string
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          description?: string | null
+          id?: string
+          price_from?: number | null
+          price_to?: number | null
+          sort?: number
+          title: string
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          description?: string | null
+          id?: string
+          price_from?: number | null
+          price_to?: number | null
+          sort?: number
+          title?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      site_settings: {
+        Row: {
+          key: string
+          updated_at: string
+          value: Json
+        }
+        Insert: {
+          key: string
+          updated_at?: string
+          value: Json
+        }
+        Update: {
+          key?: string
+          updated_at?: string
+          value?: Json
+        }
+        Relationships: []
+      }
+      user_roles: {
+        Row: {
+          created_at: string
+          id: string
+          role: Database["public"]["Enums"]["app_role"]
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          role: Database["public"]["Enums"]["app_role"]
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          role?: Database["public"]["Enums"]["app_role"]
+          user_id?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      has_role: {
+        Args: {
+          _role: Database["public"]["Enums"]["app_role"]
+          _user_id: string
+        }
+        Returns: boolean
+      }
     }
     Enums: {
-      [_ in never]: never
+      app_role: "admin" | "user"
+      request_status: "new" | "in_progress" | "done" | "cancelled"
     }
     CompositeTypes: {
       [_ in never]: never
@@ -150,6 +380,9 @@ export type CompositeTypes<
 
 export const Constants = {
   public: {
-    Enums: {},
+    Enums: {
+      app_role: ["admin", "user"],
+      request_status: ["new", "in_progress", "done", "cancelled"],
+    },
   },
 } as const
