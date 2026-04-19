@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { RequestForm } from "@/components/RequestForm";
+import { ThemeToggle } from "@/components/ThemeToggle";
 import {
   Phone,
   MessageCircle,
@@ -89,6 +90,7 @@ const Index = () => {
             <a href={PHONE_HREF} className="hidden sm:inline-flex text-sm font-medium text-foreground hover:text-coffee-medium transition-colors">
               {PHONE}
             </a>
+            <ThemeToggle />
             <Button asChild size="sm" className="hidden sm:inline-flex">
               <a href="#request">Оставить заявку</a>
             </Button>
