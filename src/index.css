@@ -70,13 +70,22 @@
     --secondary-foreground: 36 33% 94%;
     --muted: 22 15% 18%;
     --muted-foreground: 36 15% 70%;
-    --accent: 25 45% 45%;
-    --accent-foreground: 36 33% 94%;
+    --accent: 25 45% 55%;
+    --accent-foreground: 22 32% 12%;
     --destructive: 0 62% 40%;
     --destructive-foreground: 36 33% 94%;
     --border: 22 15% 22%;
     --input: 22 15% 22%;
     --ring: 36 33% 94%;
+
+    /* Override coffee tokens so text stays readable on dark bg */
+    --cream: 22 15% 16%;
+    --coffee-dark: 36 33% 94%;
+    --coffee-medium: 30 40% 70%;
+
+    --gradient-hero: linear-gradient(135deg, hsl(22 22% 12%) 0%, hsl(22 18% 16%) 100%);
+    --shadow-soft: 0 4px 24px -8px hsl(0 0% 0% / 0.5);
+    --shadow-card: 0 2px 12px -4px hsl(0 0% 0% / 0.35);
   }
 }
 
