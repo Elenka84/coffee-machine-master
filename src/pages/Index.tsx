@@ -39,8 +39,6 @@ import {
 // Defaults — overridden by site_settings from DB
 const DEFAULT_PHONE = "+7 (925) 035-23-22";
 const DEFAULT_PHONE_HREF = "tel:+79250352322";
-const DEFAULT_WHATSAPP = "https://wa.me/79250352322";
-const DEFAULT_TELEGRAM = "https://t.me/coffee_master";
 
 const services = [
   { icon: Wrench, title: "Диагностика кофемашин" },
