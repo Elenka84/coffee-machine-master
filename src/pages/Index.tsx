@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { RequestForm } from "@/components/RequestForm";
@@ -34,6 +35,7 @@ import {
   XCircle,
   Gauge,
   FileText,
+  Calculator as CalcIcon,
 } from "lucide-react";
 
 // Defaults — overridden by site_settings from DB
@@ -133,6 +135,9 @@ const Index = () => {
               <Phone className="h-4 w-4" />{PHONE}
             </a>
             <ThemeToggle />
+            <Button asChild size="sm" variant="outline" className="hidden sm:inline-flex">
+              <Link to="/calculator"><CalcIcon className="h-4 w-4" />Калькулятор</Link>
+            </Button>
             <Button asChild size="sm" className="hidden sm:inline-flex">
               <a href="#request">Оставить заявку</a>
             </Button>
