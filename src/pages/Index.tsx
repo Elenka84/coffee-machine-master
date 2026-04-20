@@ -9,8 +9,6 @@ import { useQuery } from "@tanstack/react-query";
 import { supabase } from "@/integrations/supabase/client";
 import {
   Phone,
-  MessageCircle,
-  Send,
   Wrench,
   Coffee,
   Droplets,
@@ -41,8 +39,6 @@ import {
 // Defaults — overridden by site_settings from DB
 const DEFAULT_PHONE = "+7 (925) 035-23-22";
 const DEFAULT_PHONE_HREF = "tel:+79250352322";
-const DEFAULT_WHATSAPP = "https://wa.me/79250352322";
-const DEFAULT_TELEGRAM = "https://t.me/coffee_master";
 
 const services = [
   { icon: Wrench, title: "Диагностика кофемашин" },
@@ -96,8 +92,6 @@ const Index = () => {
   const { data: settings } = useSiteSettings();
   const PHONE = settings?.phone ?? DEFAULT_PHONE;
   const PHONE_HREF = settings?.phone_href ?? DEFAULT_PHONE_HREF;
-  const WHATSAPP = settings?.whatsapp ?? DEFAULT_WHATSAPP;
-  const TELEGRAM = settings?.telegram ?? DEFAULT_TELEGRAM;
 
   const { data: brandsData } = useQuery({
     queryKey: ["public-machines"],
@@ -176,12 +170,6 @@ const Index = () => {
               </Button>
               <Button asChild size="lg" variant="outline" className="h-12 px-6 bg-background hover:scale-[1.02] transition-transform">
                 <a href="#request">Оставить заявку</a>
-              </Button>
-              <Button asChild size="lg" variant="outline" className="h-12 px-6 bg-background hover:scale-[1.02] transition-transform">
-                <a href={WHATSAPP} target="_blank" rel="noopener noreferrer"><MessageCircle className="h-4 w-4" />WhatsApp</a>
-              </Button>
-              <Button asChild size="lg" variant="outline" className="h-12 px-6 bg-background hover:scale-[1.02] transition-transform">
-                <a href={TELEGRAM} target="_blank" rel="noopener noreferrer"><Send className="h-4 w-4" />Telegram</a>
               </Button>
             </div>
 
@@ -365,10 +353,8 @@ const Index = () => {
             <div className="mt-4 inline-flex items-center gap-2 text-sm text-coffee-medium">
               <Clock className="h-4 w-4" /> Отвечаю в течение 15 минут
             </div>
-            <div className="mt-10 grid gap-4 sm:grid-cols-3">
+            <div className="mt-10 flex justify-center">
               <ContactCard href={PHONE_HREF} icon={Phone} label="Телефон" value={PHONE} />
-              <ContactCard href={WHATSAPP} icon={MessageCircle} label="WhatsApp" value="Написать в чат" external />
-              <ContactCard href={TELEGRAM} icon={Send} label="Telegram" value="Написать в чат" external />
             </div>
           </div>
         </div>
@@ -437,16 +423,6 @@ const Index = () => {
         </Button>
       </div>
 
-      {/* Floating WhatsApp */}
-      <a
-        href={WHATSAPP}
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="WhatsApp"
-        className="fixed right-4 bottom-20 md:bottom-6 z-40 flex h-14 w-14 items-center justify-center rounded-full bg-coffee-dark text-primary-foreground shadow-soft hover:bg-coffee-medium hover:scale-110 transition-all duration-300"
-      >
-        <MessageCircle className="h-6 w-6" strokeWidth={1.75} />
-      </a>
     </div>
   );
 };
