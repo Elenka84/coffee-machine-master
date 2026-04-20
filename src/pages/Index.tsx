@@ -135,8 +135,8 @@ const Index = () => {
               <Phone className="h-4 w-4" />{PHONE}
             </a>
             <ThemeToggle />
-            <Button asChild size="sm" variant="outline" className="hidden sm:inline-flex">
-              <Link to="/calculator"><CalcIcon className="h-4 w-4" />Калькулятор</Link>
+            <Button asChild size="sm" variant="outline" className="inline-flex">
+              <Link to="/calculator"><CalcIcon className="h-4 w-4" /><span className="hidden sm:inline">Калькулятор</span></Link>
             </Button>
             <Button asChild size="sm" className="hidden sm:inline-flex">
               <a href="#request">Оставить заявку</a>
