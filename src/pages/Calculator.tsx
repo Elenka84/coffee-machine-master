@@ -25,7 +25,7 @@ import {
   Settings as SettingsIcon,
 } from "lucide-react";
 
-type Option = { id: string; label: string; min: number; max: number; icon: React.ComponentType<{ className?: string; strokeWidth?: number }> };
+type Option = { id: string; label: string; min: number; max: number; icon: React.ComponentType<any> };
 
 const FAULTS: Option[] = [
   { id: "no_power", label: "Не включается", min: 1500, max: 4500, icon: Power },
