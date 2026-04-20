@@ -156,7 +156,7 @@ const Calculator = () => {
               <Phone className="h-4 w-4" />{PHONE}
             </a>
             <ThemeToggle />
-            <Button asChild size="sm" variant="outline" className="hidden sm:inline-flex">
+            <Button asChild size="sm" className="inline-flex shadow-card">
               <Link to="/"><ArrowLeft className="h-4 w-4" />На главную</Link>
             </Button>
           </div>
