@@ -153,8 +153,7 @@ const Index = () => {
               Кофемашина не работает?<br />Починю за 1 день без переплат
             </h1>
             <p className="mt-6 text-base md:text-lg text-muted-foreground max-w-2xl leading-relaxed animate-fade-up" style={{ animationDelay: "80ms", animationFillMode: "backwards" }}>
-              Saeco, De'Longhi, Philips, Bosch, Jura, Miele, Siemens, Melitta, Electrolux, Bork, Breville.
-              Стоимость ремонта обсуждается после диагностики.
+              Выезд на дом или ремонт в мастерской. Диагностика бесплатно при ремонте.
             </p>
 
             <div className="mt-6 inline-flex items-center gap-3 rounded-xl bg-cream border border-coffee-medium/30 px-5 py-3 shadow-card animate-fade-up" style={{ animationDelay: "150ms", animationFillMode: "backwards" }}>
