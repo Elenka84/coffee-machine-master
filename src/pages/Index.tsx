@@ -153,7 +153,7 @@ const Index = () => {
               Кофемашина не работает?<br />Починю за 1 день без переплат
             </h1>
             <p className="mt-6 text-base md:text-lg text-muted-foreground max-w-2xl leading-relaxed animate-fade-up" style={{ animationDelay: "80ms", animationFillMode: "backwards" }}>
-              Выезд на дом или ремонт в мастерской. Диагностика бесплатно при ремонте.
+              Выезд на дом или ремонт в мастерской.
             </p>
 
             <div className="mt-6 inline-flex items-center gap-3 rounded-xl bg-cream border border-coffee-medium/30 px-5 py-3 shadow-card animate-fade-up" style={{ animationDelay: "150ms", animationFillMode: "backwards" }}>
@@ -168,7 +168,7 @@ const Index = () => {
                 <a href={PHONE_HREF}><Phone className="h-4 w-4" />Позвонить</a>
               </Button>
               <Button asChild size="lg" variant="outline" className="h-12 px-6 bg-background hover:scale-[1.02] transition-transform">
-                <a href="#request">Оставить заявку</a>
+                <a href="#request">Узнать стоимость</a>
               </Button>
             </div>
 
