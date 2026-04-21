@@ -172,6 +172,30 @@ const Index = () => {
               </Button>
             </div>
 
+            <div className="mt-8 flex flex-wrap gap-2 animate-fade-up" style={{ animationDelay: "260ms", animationFillMode: "backwards" }}>
+              {[
+                { label: "Чистка", price: "от 1500 ₽", icon: Sparkles },
+                { label: "Протечка", price: "от 2000 ₽", icon: Waves },
+                { label: "Помпа", price: "от 2500 ₽", icon: Droplets },
+                { label: "Ремонт", price: "от 1500 ₽", icon: Wrench },
+                { label: "Диагностика", price: "0 ₽", icon: Gift, highlight: true },
+              ].map((p) => (
+                <div
+                  key={p.label}
+                  className={`inline-flex items-center gap-2 rounded-full border px-3 py-1.5 text-xs md:text-sm shadow-card ${
+                    p.highlight
+                      ? "border-coffee-medium/40 bg-cream text-coffee-dark font-semibold"
+                      : "border-border/60 bg-background/70 text-foreground"
+                  }`}
+                >
+                  <p.icon className="h-3.5 w-3.5 text-coffee-medium" strokeWidth={1.75} />
+                  <span className="font-medium">{p.label}</span>
+                  <span className="text-muted-foreground">—</span>
+                  <span className="tabular-nums">{p.price}</span>
+                </div>
+              ))}
+            </div>
+
             <div className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-4 animate-fade-up" style={{ animationDelay: "300ms", animationFillMode: "backwards" }}>
               {[
                 { icon: Cog, t: "Ремонт любой сложности" },
