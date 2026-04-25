@@ -113,13 +113,13 @@ const Calculator = () => {
     return (
       <label
         key={o.id}
-        className={`flex items-center justify-between gap-3 rounded-xl border p-3 cursor-pointer transition-all hover:-translate-y-0.5 ${
+        className={`grid grid-cols-[minmax(0,1fr)_auto] items-center gap-2 rounded-xl border p-3 cursor-pointer transition-all hover:-translate-y-0.5 ${
           checked
             ? "border-coffee-medium bg-cream shadow-card"
             : "border-border bg-card hover:border-coffee-medium/40"
         }`}
       >
-        <div className="flex items-center gap-3 min-w-0">
+        <div className="flex items-center gap-2 min-w-0">
           <input
             type="checkbox"
             className="sr-only"
@@ -136,7 +136,7 @@ const Calculator = () => {
           <Icon className="h-4 w-4 text-coffee-medium shrink-0" strokeWidth={1.75} />
           <span className="text-sm font-medium text-foreground truncate">{o.label}</span>
         </div>
-        <span className="text-xs text-muted-foreground tabular-nums whitespace-nowrap">
+        <span className="text-xs text-muted-foreground tabular-nums whitespace-nowrap text-right">
           {fmt(Math.round(o.min * typeMult))}–{fmt(Math.round(o.max * typeMult))}
         </span>
       </label>
@@ -267,21 +267,21 @@ const Calculator = () => {
               )}
 
               <div className="mt-5 space-y-2 text-sm">
-                <div className="flex justify-between gap-2">
-                  <span className="text-muted-foreground shrink-0">Диагностика</span>
-                  <span className="tabular-nums text-right">{fmt(calc.diag.min)}–{fmt(calc.diag.max)}</span>
+                <div className="grid grid-cols-[minmax(0,1fr)_auto] items-baseline gap-2">
+                  <span className="text-muted-foreground truncate">Диагностика</span>
+                  <span className="tabular-nums whitespace-nowrap text-right">{fmt(calc.diag.min)}–{fmt(calc.diag.max)}</span>
                 </div>
-                <div className="flex justify-between gap-2">
-                  <span className="text-muted-foreground shrink-0">Ремонт по поломкам</span>
-                  <span className="tabular-nums text-right">{fmt(calc.repair.min)}–{fmt(calc.repair.max)}</span>
+                <div className="grid grid-cols-[minmax(0,1fr)_auto] items-baseline gap-2">
+                  <span className="text-muted-foreground truncate">Ремонт</span>
+                  <span className="tabular-nums whitespace-nowrap text-right">{fmt(calc.repair.min)}–{fmt(calc.repair.max)}</span>
                 </div>
-                <div className="flex justify-between gap-2">
-                  <span className="text-muted-foreground shrink-0">Доп. работы</span>
-                  <span className="tabular-nums text-right">{fmt(calc.extra.min)}–{fmt(calc.extra.max)}</span>
+                <div className="grid grid-cols-[minmax(0,1fr)_auto] items-baseline gap-2">
+                  <span className="text-muted-foreground truncate">Доп. работы</span>
+                  <span className="tabular-nums whitespace-nowrap text-right">{fmt(calc.extra.min)}–{fmt(calc.extra.max)}</span>
                 </div>
-                <div className="flex justify-between gap-2 border-t border-border pt-2 font-semibold">
-                  <span className="shrink-0">Итого</span>
-                  <span className="tabular-nums text-coffee-dark text-right">{fmt(calc.total.min)}–{fmt(calc.total.max)}</span>
+                <div className="grid grid-cols-[minmax(0,1fr)_auto] items-baseline gap-2 border-t border-border pt-2 font-semibold">
+                  <span className="truncate">Итого</span>
+                  <span className="tabular-nums text-coffee-dark whitespace-nowrap text-right">{fmt(calc.total.min)}–{fmt(calc.total.max)}</span>
                 </div>
               </div>
 
