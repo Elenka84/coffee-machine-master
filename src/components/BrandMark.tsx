@@ -1,4 +1,4 @@
-import { Cog } from "lucide-react";
+import { Settings } from "lucide-react";
 import logoMark from "@/assets/logo.jpeg";
 import { cn } from "@/lib/utils";
 
@@ -29,9 +29,9 @@ export const BrandMark = ({ size = "md", hideTagline = false, className }: Brand
     lg: "text-xl sm:text-2xl leading-[0.95]",
   }[size];
 
-  // Gear "O" should match the cap-height of the uppercase letters next to it.
-  // Slightly smaller than 1em looks more balanced in Unbounded.
-  const gearSize = "h-[0.85em] w-[0.85em]";
+  // Gear "O" should visually match the cap-height of "К" and "Ф".
+  // Settings icon has thicker teeth that read like the reference cog.
+  const gearSize = "h-[1em] w-[1em]";
 
   return (
     <div className={cn("flex items-center gap-2 sm:gap-3", className)}>
@@ -47,9 +47,13 @@ export const BrandMark = ({ size = "md", hideTagline = false, className }: Brand
             titleSize,
           )}
         >
-          <div className="flex items-center">
+          <div className="flex items-baseline">
             <span>К</span>
-            <Cog className={cn(gearSize, "text-coffee-dark")} strokeWidth={2.25} aria-hidden="true" />
+            <Settings
+              className={cn(gearSize, "text-coffee-dark inline-block self-center -mx-[0.02em]")}
+              strokeWidth={2.5}
+              aria-hidden="true"
+            />
             <span>ФЕ</span>
           </div>
           <div className="text-coffee-medium">МЕХАНИКУС</div>
