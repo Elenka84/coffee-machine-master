@@ -147,10 +147,9 @@ const Calculator = () => {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <header className="sticky top-0 z-40 border-b border-border/60 bg-background/80 backdrop-blur-md">
-        <div className="container flex h-16 items-center justify-between">
-          <Link to="/" className="flex items-center gap-2">
-            <img src={logoMark} alt="Кофе Механикус" className="h-8 w-8 rounded-full object-contain" />
-            <span className="font-display font-semibold tracking-tight text-coffee-dark">Кофе Механикус</span>
+        <div className="container flex h-20 items-center justify-between">
+          <Link to="/" aria-label="Кофе Механикус — на главную" className="flex items-center">
+            <BrandMark size="md" />
           </Link>
           <div className="flex items-center gap-3">
             <a href={PHONE_HREF} className="hidden sm:inline-flex items-center gap-2 text-sm font-medium text-foreground hover:text-coffee-medium transition-colors">
