@@ -8,7 +8,7 @@ import { useSiteSettings } from "@/hooks/useSiteSettings";
 import { useQuery } from "@tanstack/react-query";
 import { supabase } from "@/integrations/supabase/client";
 import masterPhoto from "@/assets/master-batnasan.png";
-import logoMark from "@/assets/logo.jpeg";
+import { BrandMark } from "@/components/BrandMark";
 import {
   Phone,
   Wrench,
@@ -121,10 +121,9 @@ const Index = () => {
     <div className="min-h-screen bg-background text-foreground">
       {/* Header */}
       <header className="sticky top-0 z-40 border-b border-border/60 bg-background/80 backdrop-blur-md">
-        <div className="container flex h-16 items-center justify-between">
-          <a href="#" className="flex items-center gap-2">
-            <img src={logoMark} alt="Кофе Механикус — ремонт кофемашин" className="h-8 w-8 rounded-full object-contain" />
-            <span className="font-display font-semibold tracking-tight text-coffee-dark">Кофе Механикус</span>
+        <div className="container flex h-20 items-center justify-between">
+          <a href="#" aria-label="Кофе Механикус — на главную" className="flex items-center">
+            <BrandMark size="md" />
           </a>
           <div className="flex items-center gap-3">
             <a href={PHONE_HREF} className="hidden sm:inline-flex items-center gap-2 text-sm font-medium text-foreground hover:text-coffee-medium transition-colors">
@@ -483,10 +482,7 @@ const Index = () => {
       {/* Footer */}
       <footer className="border-t border-border/60 py-10 pb-24 md:pb-10">
         <div className="container flex flex-col md:flex-row gap-4 items-center justify-between">
-          <div className="flex items-center gap-2">
-            <img src={logoMark} alt="Кофе Механикус" className="h-7 w-7 rounded-full object-contain" />
-            <span className="font-display font-semibold text-coffee-dark">Кофе Механикус</span>
-          </div>
+          <BrandMark size="sm" hideTagline />
           <div className="flex items-center gap-2 text-sm text-muted-foreground">
             <MapPin className="h-4 w-4" /> Работаю по городу и ближайшему району
           </div>
