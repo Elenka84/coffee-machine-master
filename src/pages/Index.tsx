@@ -231,16 +231,18 @@ const Index = () => {
             <div>
               <div className="text-xs uppercase tracking-widest text-coffee-medium mb-4">О мастере</div>
               <h2 className="font-display text-3xl md:text-4xl font-semibold text-coffee-dark leading-tight">
-                Меня зовут Батнасан
+                Батнасан — частный мастер по ремонту кофемашин
               </h2>
               <p className="mt-4 text-lg text-muted-foreground">
-                Частный мастер по ремонту кофемашин
+                Опыт работы более 12 лет. Ремонтирую лично, без посредников.
               </p>
-              <ul className="mt-8 space-y-4">
+              <ul className="mt-8 space-y-3">
                 {[
-                  "Работаю без посредников",
-                  "Называю цену до ремонта",
-                  "Даю гарантию на запчасти",
+                  "Более 1000 отремонтированных кофемашин",
+                  "Работаю с Saeco, De’Longhi, Philips, Bosch, Jura и др.",
+                  "Называю цену до ремонта — без сюрпризов",
+                  "Даю гарантию на запчасти и выполненные работы",
+                  "Работаю с частными клиентами и организациями",
                 ].map((t) => (
                   <li key={t} className="flex gap-3">
                     <CheckCircle2 className="h-5 w-5 text-coffee-medium shrink-0 mt-0.5" strokeWidth={1.75} />
@@ -248,6 +250,21 @@ const Index = () => {
                   </li>
                 ))}
               </ul>
+
+              <div className="mt-8 rounded-xl border border-border/60 bg-background px-5 py-4 shadow-card">
+                <p className="text-sm md:text-base text-foreground">
+                  Можете просто описать проблему — <span className="font-semibold text-coffee-dark">подскажу предварительно бесплатно</span>.
+                </p>
+              </div>
+
+              <div className="mt-6">
+                <Button asChild size="lg" className="h-12 px-6 hover:scale-[1.02] transition-transform">
+                  <Link to="/calculator">
+                    <CalcIcon className="h-4 w-4" />
+                    Узнать стоимость за 1 минуту
+                  </Link>
+                </Button>
+              </div>
             </div>
           </div>
         </div>
