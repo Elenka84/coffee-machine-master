@@ -267,21 +267,21 @@ const Calculator = () => {
               )}
 
               <div className="mt-5 space-y-2 text-sm">
-                <div className="flex justify-between">
-                  <span className="text-muted-foreground">Диагностика</span>
-                  <span className="tabular-nums">{fmt(calc.diag.min)}–{fmt(calc.diag.max)}</span>
+                <div className="flex justify-between gap-2">
+                  <span className="text-muted-foreground shrink-0">Диагностика</span>
+                  <span className="tabular-nums text-right">{fmt(calc.diag.min)}–{fmt(calc.diag.max)}</span>
                 </div>
-                <div className="flex justify-between">
-                  <span className="text-muted-foreground">Ремонт по поломкам</span>
-                  <span className="tabular-nums">{fmt(calc.repair.min)}–{fmt(calc.repair.max)}</span>
+                <div className="flex justify-between gap-2">
+                  <span className="text-muted-foreground shrink-0">Ремонт по поломкам</span>
+                  <span className="tabular-nums text-right">{fmt(calc.repair.min)}–{fmt(calc.repair.max)}</span>
                 </div>
-                <div className="flex justify-between">
-                  <span className="text-muted-foreground">Дополнительные работы</span>
-                  <span className="tabular-nums">{fmt(calc.extra.min)}–{fmt(calc.extra.max)}</span>
+                <div className="flex justify-between gap-2">
+                  <span className="text-muted-foreground shrink-0">Доп. работы</span>
+                  <span className="tabular-nums text-right">{fmt(calc.extra.min)}–{fmt(calc.extra.max)}</span>
                 </div>
-                <div className="flex justify-between border-t border-border pt-2 font-semibold">
-                  <span>Итого</span>
-                  <span className="tabular-nums text-coffee-dark">{fmt(calc.total.min)}–{fmt(calc.total.max)}</span>
+                <div className="flex justify-between gap-2 border-t border-border pt-2 font-semibold">
+                  <span className="shrink-0">Итого</span>
+                  <span className="tabular-nums text-coffee-dark text-right">{fmt(calc.total.min)}–{fmt(calc.total.max)}</span>
                 </div>
               </div>
 
