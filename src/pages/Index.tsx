@@ -7,6 +7,7 @@ import { useReveal } from "@/hooks/use-reveal";
 import { useSiteSettings } from "@/hooks/useSiteSettings";
 import { useQuery } from "@tanstack/react-query";
 import { supabase } from "@/integrations/supabase/client";
+import masterPhoto from "@/assets/master-batnasan.png";
 import {
   Phone,
   Wrench,
@@ -212,6 +213,45 @@ const Index = () => {
           </div>
         </div>
       </section>
+
+      {/* About master */}
+      <RevealSection className="py-20 md:py-28 bg-cream">
+        <div className="container">
+          <div className="grid gap-10 md:gap-14 md:grid-cols-2 items-center">
+            <div className="relative">
+              <div className="overflow-hidden rounded-2xl border border-border/60 shadow-soft bg-background">
+                <img
+                  src={masterPhoto}
+                  alt="Батнасан — частный мастер по ремонту кофемашин"
+                  className="w-full h-auto object-cover"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+            <div>
+              <div className="text-xs uppercase tracking-widest text-coffee-medium mb-4">О мастере</div>
+              <h2 className="font-display text-3xl md:text-4xl font-semibold text-coffee-dark leading-tight">
+                Меня зовут Батнасан
+              </h2>
+              <p className="mt-4 text-lg text-muted-foreground">
+                Частный мастер по ремонту кофемашин
+              </p>
+              <ul className="mt-8 space-y-4">
+                {[
+                  "Работаю без посредников",
+                  "Называю цену до ремонта",
+                  "Даю гарантию на запчасти",
+                ].map((t) => (
+                  <li key={t} className="flex gap-3">
+                    <CheckCircle2 className="h-5 w-5 text-coffee-medium shrink-0 mt-0.5" strokeWidth={1.75} />
+                    <span className="text-foreground leading-relaxed">{t}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </RevealSection>
 
       {/* Services */}
       <RevealSection id="services" className="py-20 md:py-28">
