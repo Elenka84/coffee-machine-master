@@ -113,13 +113,13 @@ const Calculator = () => {
     return (
       <label
         key={o.id}
-        className={`flex items-center justify-between gap-3 rounded-xl border p-3 cursor-pointer transition-all hover:-translate-y-0.5 ${
+        className={`grid grid-cols-[minmax(0,1fr)_auto] items-center gap-2 rounded-xl border p-3 cursor-pointer transition-all hover:-translate-y-0.5 ${
           checked
             ? "border-coffee-medium bg-cream shadow-card"
             : "border-border bg-card hover:border-coffee-medium/40"
         }`}
       >
-        <div className="flex items-center gap-3 min-w-0">
+        <div className="flex items-center gap-2 min-w-0">
           <input
             type="checkbox"
             className="sr-only"
@@ -136,7 +136,7 @@ const Calculator = () => {
           <Icon className="h-4 w-4 text-coffee-medium shrink-0" strokeWidth={1.75} />
           <span className="text-sm font-medium text-foreground truncate">{o.label}</span>
         </div>
-        <span className="text-xs text-muted-foreground tabular-nums whitespace-nowrap">
+        <span className="text-xs text-muted-foreground tabular-nums whitespace-nowrap text-right">
           {fmt(Math.round(o.min * typeMult))}–{fmt(Math.round(o.max * typeMult))}
         </span>
       </label>
