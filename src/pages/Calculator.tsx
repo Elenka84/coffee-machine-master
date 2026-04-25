@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { useSiteSettings } from "@/hooks/useSiteSettings";
+import logoMark from "@/assets/logo.jpeg";
 import {
   Coffee,
   Phone,
