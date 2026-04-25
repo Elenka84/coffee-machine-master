@@ -8,6 +8,7 @@ import { useSiteSettings } from "@/hooks/useSiteSettings";
 import { useQuery } from "@tanstack/react-query";
 import { supabase } from "@/integrations/supabase/client";
 import masterPhoto from "@/assets/master-batnasan.png";
+import logoMark from "@/assets/logo.jpeg";
 import {
   Phone,
   Wrench,
@@ -122,8 +123,8 @@ const Index = () => {
       <header className="sticky top-0 z-40 border-b border-border/60 bg-background/80 backdrop-blur-md">
         <div className="container flex h-16 items-center justify-between">
           <a href="#" className="flex items-center gap-2">
-            <Coffee className="h-6 w-6 text-coffee-dark" strokeWidth={1.5} />
-            <span className="font-display font-semibold tracking-tight text-coffee-dark">Мастер кофе</span>
+            <img src={logoMark} alt="Кофе Механикус — ремонт кофемашин" className="h-8 w-8 rounded-full object-contain" />
+            <span className="font-display font-semibold tracking-tight text-coffee-dark">Кофе Механикус</span>
           </a>
           <div className="flex items-center gap-3">
             <a href={PHONE_HREF} className="hidden sm:inline-flex items-center gap-2 text-sm font-medium text-foreground hover:text-coffee-medium transition-colors">
@@ -148,7 +149,7 @@ const Index = () => {
         <div className="container py-16 md:py-28">
           <div className="max-w-3xl">
             <div className="inline-flex items-center gap-2 rounded-full bg-background/70 px-4 py-1.5 text-xs font-medium text-coffee-medium mb-6 border border-border/60 animate-fade-up">
-              <Wrench className="h-3.5 w-3.5" /> Частный мастер · опыт работы
+              <Wrench className="h-3.5 w-3.5" /> Частный мастер · опыт работы более 12 лет
             </div>
             <h1 className="font-display text-4xl md:text-6xl font-semibold text-coffee-dark leading-[1.05] animate-fade-up">
               Кофемашина не работает?<br />Починю за 1 день без переплат
@@ -483,8 +484,8 @@ const Index = () => {
       <footer className="border-t border-border/60 py-10 pb-24 md:pb-10">
         <div className="container flex flex-col md:flex-row gap-4 items-center justify-between">
           <div className="flex items-center gap-2">
-            <Coffee className="h-5 w-5 text-coffee-dark" strokeWidth={1.5} />
-            <span className="font-display font-semibold text-coffee-dark">Мастер кофе</span>
+            <img src={logoMark} alt="Кофе Механикус" className="h-7 w-7 rounded-full object-contain" />
+            <span className="font-display font-semibold text-coffee-dark">Кофе Механикус</span>
           </div>
           <div className="flex items-center gap-2 text-sm text-muted-foreground">
             <MapPin className="h-4 w-4" /> Работаю по городу и ближайшему району
