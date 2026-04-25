@@ -252,10 +252,10 @@ const Calculator = () => {
           </div>
 
           <div className="lg:sticky lg:top-20 lg:self-start space-y-4">
-            <Card className="p-6 bg-gradient-hero border-coffee-medium/30">
+            <Card className="p-4 sm:p-6 bg-gradient-hero border-coffee-medium/30">
               <h2 className="font-display text-xl font-semibold text-coffee-dark mb-1">Итог</h2>
               <p className="text-xs text-muted-foreground mb-4">Предварительная оценка</p>
-              <div className="text-3xl font-display font-bold text-coffee-dark tabular-nums">
+              <div className="text-2xl sm:text-3xl font-display font-bold text-coffee-dark tabular-nums break-words">
                 {calc.total.min === 0 && calc.total.max === 0
                   ? "0 ₽"
                   : `${fmt(calc.total.min)} – ${fmt(calc.total.max)}`}
@@ -267,21 +267,21 @@ const Calculator = () => {
               )}
 
               <div className="mt-5 space-y-2 text-sm">
-                <div className="flex justify-between">
-                  <span className="text-muted-foreground">Диагностика</span>
-                  <span className="tabular-nums">{fmt(calc.diag.min)}–{fmt(calc.diag.max)}</span>
+                <div className="flex justify-between gap-2">
+                  <span className="text-muted-foreground shrink-0">Диагностика</span>
+                  <span className="tabular-nums text-right">{fmt(calc.diag.min)}–{fmt(calc.diag.max)}</span>
                 </div>
-                <div className="flex justify-between">
-                  <span className="text-muted-foreground">Ремонт по поломкам</span>
-                  <span className="tabular-nums">{fmt(calc.repair.min)}–{fmt(calc.repair.max)}</span>
+                <div className="flex justify-between gap-2">
+                  <span className="text-muted-foreground shrink-0">Ремонт по поломкам</span>
+                  <span className="tabular-nums text-right">{fmt(calc.repair.min)}–{fmt(calc.repair.max)}</span>
                 </div>
-                <div className="flex justify-between">
-                  <span className="text-muted-foreground">Дополнительные работы</span>
-                  <span className="tabular-nums">{fmt(calc.extra.min)}–{fmt(calc.extra.max)}</span>
+                <div className="flex justify-between gap-2">
+                  <span className="text-muted-foreground shrink-0">Доп. работы</span>
+                  <span className="tabular-nums text-right">{fmt(calc.extra.min)}–{fmt(calc.extra.max)}</span>
                 </div>
-                <div className="flex justify-between border-t border-border pt-2 font-semibold">
-                  <span>Итого</span>
-                  <span className="tabular-nums text-coffee-dark">{fmt(calc.total.min)}–{fmt(calc.total.max)}</span>
+                <div className="flex justify-between gap-2 border-t border-border pt-2 font-semibold">
+                  <span className="shrink-0">Итого</span>
+                  <span className="tabular-nums text-coffee-dark text-right">{fmt(calc.total.min)}–{fmt(calc.total.max)}</span>
                 </div>
               </div>
 
