@@ -252,10 +252,10 @@ const Calculator = () => {
           </div>
 
           <div className="lg:sticky lg:top-20 lg:self-start space-y-4">
-            <Card className="p-6 bg-gradient-hero border-coffee-medium/30">
+            <Card className="p-4 sm:p-6 bg-gradient-hero border-coffee-medium/30">
               <h2 className="font-display text-xl font-semibold text-coffee-dark mb-1">Итог</h2>
               <p className="text-xs text-muted-foreground mb-4">Предварительная оценка</p>
-              <div className="text-3xl font-display font-bold text-coffee-dark tabular-nums">
+              <div className="text-2xl sm:text-3xl font-display font-bold text-coffee-dark tabular-nums break-words">
                 {calc.total.min === 0 && calc.total.max === 0
                   ? "0 ₽"
                   : `${fmt(calc.total.min)} – ${fmt(calc.total.max)}`}
