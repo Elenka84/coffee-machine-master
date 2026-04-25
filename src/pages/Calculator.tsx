@@ -267,21 +267,21 @@ const Calculator = () => {
               )}
 
               <div className="mt-5 space-y-2 text-sm">
-                <div className="flex justify-between gap-2">
-                  <span className="text-muted-foreground shrink-0">Диагностика</span>
-                  <span className="tabular-nums text-right">{fmt(calc.diag.min)}–{fmt(calc.diag.max)}</span>
+                <div className="grid grid-cols-[minmax(0,1fr)_auto] items-baseline gap-2">
+                  <span className="text-muted-foreground truncate">Диагностика</span>
+                  <span className="tabular-nums whitespace-nowrap text-right">{fmt(calc.diag.min)}–{fmt(calc.diag.max)}</span>
                 </div>
-                <div className="flex justify-between gap-2">
-                  <span className="text-muted-foreground shrink-0">Ремонт по поломкам</span>
-                  <span className="tabular-nums text-right">{fmt(calc.repair.min)}–{fmt(calc.repair.max)}</span>
+                <div className="grid grid-cols-[minmax(0,1fr)_auto] items-baseline gap-2">
+                  <span className="text-muted-foreground truncate">Ремонт</span>
+                  <span className="tabular-nums whitespace-nowrap text-right">{fmt(calc.repair.min)}–{fmt(calc.repair.max)}</span>
                 </div>
-                <div className="flex justify-between gap-2">
-                  <span className="text-muted-foreground shrink-0">Доп. работы</span>
-                  <span className="tabular-nums text-right">{fmt(calc.extra.min)}–{fmt(calc.extra.max)}</span>
+                <div className="grid grid-cols-[minmax(0,1fr)_auto] items-baseline gap-2">
+                  <span className="text-muted-foreground truncate">Доп. работы</span>
+                  <span className="tabular-nums whitespace-nowrap text-right">{fmt(calc.extra.min)}–{fmt(calc.extra.max)}</span>
                 </div>
-                <div className="flex justify-between gap-2 border-t border-border pt-2 font-semibold">
-                  <span className="shrink-0">Итого</span>
-                  <span className="tabular-nums text-coffee-dark text-right">{fmt(calc.total.min)}–{fmt(calc.total.max)}</span>
+                <div className="grid grid-cols-[minmax(0,1fr)_auto] items-baseline gap-2 border-t border-border pt-2 font-semibold">
+                  <span className="truncate">Итого</span>
+                  <span className="tabular-nums text-coffee-dark whitespace-nowrap text-right">{fmt(calc.total.min)}–{fmt(calc.total.max)}</span>
                 </div>
               </div>
 
