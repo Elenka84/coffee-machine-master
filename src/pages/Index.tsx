@@ -480,7 +480,7 @@ const Index = () => {
       </RevealSection>
 
       {/* Footer */}
-      <footer className="border-t border-border/60 py-10 pb-24 md:pb-10">
+      <footer className="border-t border-border/60 bg-background/85 backdrop-blur-sm py-10 pb-24 md:pb-10 text-foreground">
         <div className="container flex flex-col md:flex-row gap-4 items-center justify-between">
           <BrandMark size="sm" hideTagline />
           <div className="flex items-center gap-2 text-sm text-muted-foreground">
