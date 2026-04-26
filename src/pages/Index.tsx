@@ -279,8 +279,12 @@ const Index = () => {
         <div className="container">
           <SectionHeader eyebrow="Услуги" title="Что я делаю" />
           <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {services.map((s) => (
-              <Card key={s.title} className="p-6 border-border/60 shadow-card hover:shadow-soft hover:-translate-y-0.5 transition-all duration-300">
+            {services.map((s, i) => (
+              <Card
+                key={s.title}
+                className="float-card p-6 border-border/60 shadow-card hover:shadow-soft hover:-translate-y-0.5 transition-all duration-300"
+                style={{ "--float-delay": `${i * 70}ms` } as React.CSSProperties}
+              >
                 <div className="flex items-center gap-4">
                   <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-cream">
                     <s.icon className="h-5 w-5 text-coffee-dark" strokeWidth={1.5} />
@@ -298,8 +302,12 @@ const Index = () => {
         <div className="container">
           <SectionHeader eyebrow="Неисправности" title="С чем обращаются чаще всего" />
           <div className="mt-12 grid gap-3 grid-cols-2 md:grid-cols-4">
-            {faults.map((f) => (
-              <div key={f.label} className="flex items-center gap-3 rounded-lg bg-background px-4 py-4 border border-border/60 hover:border-coffee-medium transition-colors">
+            {faults.map((f, i) => (
+              <div
+                key={f.label}
+                className="float-card flex items-center gap-3 rounded-lg bg-background px-4 py-4 border border-border/60 hover:border-coffee-medium transition-colors"
+                style={{ "--float-delay": `${i * 60}ms` } as React.CSSProperties}
+              >
                 <f.icon className="h-5 w-5 text-coffee-medium shrink-0" strokeWidth={1.5} />
                 <span className="text-sm font-medium text-foreground">{f.label}</span>
               </div>
@@ -339,8 +347,12 @@ const Index = () => {
         <div className="container">
           <SectionHeader eyebrow="Преимущества" title="Почему обращаются ко мне" />
           <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {advantages.map((a) => (
-              <div key={a.title} className="rounded-xl bg-background p-6 border border-border/60 hover:-translate-y-0.5 hover:shadow-card transition-all duration-300">
+            {advantages.map((a, i) => (
+              <div
+                key={a.title}
+                className="float-card rounded-xl bg-background p-6 border border-border/60 hover:-translate-y-0.5 hover:shadow-card transition-all duration-300"
+                style={{ "--float-delay": `${i * 80}ms` } as React.CSSProperties}
+              >
                 <a.icon className="h-6 w-6 text-coffee-medium" strokeWidth={1.5} />
                 <h3 className="mt-4 font-display font-semibold text-coffee-dark">{a.title}</h3>
                 <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{a.text}</p>
@@ -355,8 +367,12 @@ const Index = () => {
         <div className="container">
           <SectionHeader eyebrow="Бренды" title="С какими производителями работаю" />
           <div className="mt-12 flex flex-wrap justify-center gap-3">
-            {brands.map((b) => (
-              <div key={b} className="px-5 py-3 rounded-full border border-border bg-background text-coffee-dark font-medium hover:border-coffee-medium hover:scale-105 transition-all duration-200">
+            {brands.map((b, i) => (
+              <div
+                key={b}
+                className="float-card px-5 py-3 rounded-full border border-border bg-background text-coffee-dark font-medium hover:border-coffee-medium hover:scale-105 transition-all duration-200"
+                style={{ "--float-delay": `${i * 45}ms` } as React.CSSProperties}
+              >
                 {b}
               </div>
             ))}
@@ -370,7 +386,11 @@ const Index = () => {
           <SectionHeader eyebrow="Как проходит работа" title="4 простых шага" />
           <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {steps.map((s, i) => (
-              <div key={s.n} className="relative">
+              <div
+                key={s.n}
+                className="float-card relative"
+                style={{ "--float-delay": `${i * 90}ms` } as React.CSSProperties}
+              >
                 <div className="rounded-xl bg-background p-6 border border-border/60 h-full hover:-translate-y-0.5 hover:shadow-card transition-all duration-300">
                   <div className="text-xs font-mono text-coffee-medium tracking-widest">{s.n}</div>
                   <h3 className="mt-3 font-display font-semibold text-coffee-dark">{s.title}</h3>
@@ -396,8 +416,12 @@ const Index = () => {
         <div className="container">
           <SectionHeader eyebrow="Отзывы" title="Что говорят клиенты" />
           <div className="mt-12 grid gap-6 sm:grid-cols-2">
-            {reviews.map((r) => (
-              <Card key={r.name} className="p-6 border-border/60 shadow-card hover:shadow-soft transition-shadow">
+            {reviews.map((r, i) => (
+              <Card
+                key={r.name}
+                className="float-card p-6 border-border/60 shadow-card hover:shadow-soft transition-shadow"
+                style={{ "--float-delay": `${i * 120}ms` } as React.CSSProperties}
+              >
                 <div className="flex gap-0.5 text-coffee-medium">
                   {Array.from({ length: 5 }).map((_, i) => (
                     <Star key={i} className="h-4 w-4 fill-current" />

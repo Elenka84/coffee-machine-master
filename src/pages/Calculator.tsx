@@ -32,7 +32,7 @@ const FAULTS: Option[] = [
   { id: "no_power", label: "Не включается", min: 1500, max: 4500, icon: Power },
   { id: "no_water", label: "Не подает воду", min: 2000, max: 5000, icon: Droplets },
   { id: "no_heat", label: "Не греет", min: 2500, max: 6000, icon: Flame },
-  { id: "leak", label: "Течет", min: 1500, max: 4500, icon: Waves },
+  { id: "leak", label: "Течет", min: 2000, max: 4500, icon: Waves },
   { id: "grinder", label: "Не мелет кофе", min: 2000, max: 5500, icon: Coffee },
   { id: "no_brew", label: "Не варит кофе", min: 2500, max: 6000, icon: XCircle },
   { id: "error", label: "Выдает ошибку", min: 1500, max: 4000, icon: AlertTriangle },
