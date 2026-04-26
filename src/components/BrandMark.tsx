@@ -1,5 +1,5 @@
 import { Cog } from "lucide-react";
-import logoMark from "@/assets/logo.jpeg";
+import logoMark from "@/assets/logo.png";
 import { cn } from "@/lib/utils";
 
 type BrandMarkProps = {
