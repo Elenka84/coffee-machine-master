@@ -121,7 +121,7 @@ const Index = () => {
     <div className="min-h-screen text-foreground">
       {/* Header */}
       <header className="sticky top-0 z-40 border-b border-border/60 bg-background/80 backdrop-blur-md">
-        <div className="container flex h-24 items-center justify-between">
+        <div className="container flex h-32 items-center justify-between">
           <a href="#" aria-label="Кофе Механикус — на главную" className="flex items-center">
             <BrandMark size="md" />
           </a>
