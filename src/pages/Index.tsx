@@ -524,7 +524,7 @@ const RevealSection = ({
 const SectionHeader = ({ eyebrow, title, centered }: { eyebrow: string; title: string; centered?: boolean }) => (
   <div className={centered ? "text-center" : ""}>
     <div className="text-xs uppercase tracking-widest text-coffee-medium font-semibold">{eyebrow}</div>
-    <h2 className="font-display mt-3 text-3xl md:text-4xl font-semibold text-coffee-dark leading-tight max-w-2xl">
+    <h2 className={`font-display mt-3 text-3xl md:text-4xl font-semibold text-coffee-dark leading-tight max-w-2xl ${centered ? "mx-auto" : ""}`}>
       {title}
     </h2>
   </div>
