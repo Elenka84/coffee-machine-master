@@ -1,4 +1,4 @@
-import { Settings } from "lucide-react";
+import { Cog } from "lucide-react";
 import logoMark from "@/assets/logo.jpeg";
 import { cn } from "@/lib/utils";
 
@@ -18,9 +18,9 @@ type BrandMarkProps = {
  */
 export const BrandMark = ({ size = "md", hideTagline = false, className }: BrandMarkProps) => {
   const logoSize = {
-    sm: "h-9 w-9",
-    md: "h-12 w-12 sm:h-14 sm:w-14",
-    lg: "h-16 w-16 sm:h-20 sm:w-20",
+    sm: "h-10 w-10",
+    md: "h-14 w-14 sm:h-16 sm:w-16",
+    lg: "h-20 w-20 sm:h-24 sm:w-24",
   }[size];
 
   const titleSize = {
@@ -49,9 +49,9 @@ export const BrandMark = ({ size = "md", hideTagline = false, className }: Brand
         >
           <div className="flex items-baseline">
             <span>К</span>
-            <Settings
+            <Cog
               className={cn(gearSize, "text-coffee-dark inline-block self-center -mx-[0.02em]")}
-              strokeWidth={2.5}
+              strokeWidth={2}
               aria-hidden="true"
             />
             <span>ФЕ</span>
