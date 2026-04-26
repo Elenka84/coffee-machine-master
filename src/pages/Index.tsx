@@ -118,7 +118,7 @@ const Index = () => {
     : FALLBACK_REVIEWS;
 
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className="min-h-screen text-foreground">
       {/* Header */}
       <header className="sticky top-0 z-40 border-b border-border/60 bg-background/80 backdrop-blur-md">
         <div className="container flex h-24 items-center justify-between">
