@@ -480,13 +480,13 @@ const Index = () => {
       </RevealSection>
 
       {/* Footer */}
-      <footer className="border-t border-border/60 py-10 pb-24 md:pb-10">
+      <footer className="border-t border-border/60 bg-background/85 backdrop-blur-sm py-10 pb-24 md:pb-10 text-foreground">
         <div className="container flex flex-col md:flex-row gap-4 items-center justify-between">
           <BrandMark size="sm" hideTagline />
-          <div className="flex items-center gap-2 text-sm text-muted-foreground">
+          <div className="flex items-center gap-2 text-sm text-foreground/80">
             <MapPin className="h-4 w-4" /> Работаю по городу и ближайшему району
           </div>
-          <p className="text-sm text-muted-foreground">© {new Date().getFullYear()} · Частный мастер</p>
+          <p className="text-sm text-foreground/80">© {new Date().getFullYear()} · Частный мастер</p>
           <a href={PHONE_HREF} className="inline-flex items-center gap-2 text-sm font-medium text-coffee-dark hover:text-coffee-medium">
             <Phone className="h-4 w-4" />{PHONE}
           </a>
