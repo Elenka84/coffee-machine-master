@@ -8,6 +8,7 @@ import { useSiteSettings } from "@/hooks/useSiteSettings";
 import { useQuery } from "@tanstack/react-query";
 import { supabase } from "@/integrations/supabase/client";
 import masterPhoto from "@/assets/master-batnasan.png";
+import heroBg from "@/assets/hero-bg.png";
 import { BrandMark } from "@/components/BrandMark";
 import {
   Phone,
@@ -144,8 +145,11 @@ const Index = () => {
       </header>
 
       {/* Hero */}
-      <section className="bg-gradient-hero">
-        <div className="container py-16 md:py-28 bg-[#efd7ae] shadow-soft">
+      <section
+        className="bg-cover bg-center"
+        style={{ backgroundImage: `url(${heroBg})` }}
+      >
+        <div className="container py-16 md:py-28">
           <div className="max-w-3xl">
             <div className="inline-flex items-center gap-2 rounded-full bg-background/70 px-4 py-1.5 text-xs font-medium text-coffee-medium mb-6 border border-border/60 animate-fade-up">
               <Wrench className="h-3.5 w-3.5" /> Частный мастер · опыт работы более 12 лет
