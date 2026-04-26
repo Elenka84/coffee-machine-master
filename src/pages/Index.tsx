@@ -145,7 +145,7 @@ const Index = () => {
 
       {/* Hero */}
       <section className="bg-gradient-hero">
-        <div className="container py-16 md:py-28">
+        <div className="container py-16 md:py-28 bg-[#efd7ae] shadow-soft">
           <div className="max-w-3xl">
             <div className="inline-flex items-center gap-2 rounded-full bg-background/70 px-4 py-1.5 text-xs font-medium text-coffee-medium mb-6 border border-border/60 animate-fade-up">
               <Wrench className="h-3.5 w-3.5" /> Частный мастер · опыт работы более 12 лет
