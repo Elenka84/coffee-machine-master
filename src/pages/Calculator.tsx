@@ -164,14 +164,17 @@ const Calculator = () => {
         </div>
       </header>
 
-      <section className="bg-gradient-hero">
-        <div className="container py-10 md:py-14">
+      <section
+        className="bg-cover bg-center"
+        style={{ backgroundImage: `url(${heroBg})` }}
+      >
+        <div className="container pt-40 md:pt-44 pb-10 md:pb-14">
           <div className="max-w-3xl">
             <div className="inline-flex items-center gap-2 rounded-full bg-background/70 px-4 py-1.5 text-xs font-medium text-coffee-medium mb-4 border border-border/60">
               <CalcIcon className="h-3.5 w-3.5" /> Калькулятор
             </div>
-            <h1 className="font-display text-3xl md:text-5xl font-semibold text-coffee-dark leading-[1.05]">
-              Предварительная оценка ремонта
+            <h1 className="hero-title font-display text-3xl md:text-5xl font-semibold text-coffee-dark leading-[1.05]">
+              Калькулятор стоимости ремонта
             </h1>
             <p className="mt-4 text-base text-muted-foreground">
               Без «шок-сумм»: показываем диапазон цены и логичную разбивку. Точная стоимость подтверждается после диагностики.
