@@ -188,7 +188,6 @@ const Index = () => {
               {[
                 { label: "Чистка", price: "от 1500 ₽", icon: Sparkles },
                 { label: "Протечка", price: "от 2000 ₽", icon: Waves },
-                { label: "Помпа", price: "от 2500 ₽", icon: Droplets },
                 { label: "Ремонт", price: "от 1500 ₽", icon: Wrench },
                 { label: "Диагностика", price: "0 ₽", icon: Gift, highlight: true },
               ].map((p) => (
