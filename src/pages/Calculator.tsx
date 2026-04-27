@@ -284,14 +284,7 @@ const Calculator = () => {
                 </div>
               </div>
 
-              <div className="mt-5 flex flex-wrap gap-2">
-                <Button asChild className="flex-1">
-                  <Link to="/#request"><Wrench className="h-4 w-4" />Оставить заявку</Link>
-                </Button>
-                <Button asChild variant="outline" size="icon">
-                  <a href={PHONE_HREF} aria-label="Позвонить"><Phone className="h-4 w-4" /></a>
-                </Button>
-              </div>
+
 
               <div className="mt-4 flex gap-2">
                 <Button variant="outline" size="sm" onClick={reset} className="flex-1">Сбросить</Button>
