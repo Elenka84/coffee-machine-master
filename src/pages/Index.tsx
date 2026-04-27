@@ -330,7 +330,7 @@ const Index = () => {
               <div className="font-display text-lg font-semibold text-coffee-dark">Не нашли свою проблему?</div>
               <p className="text-sm text-muted-foreground mt-1">Опишите её — подскажу решение</p>
             </div>
-            <Button asChild size="lg" className="h-12 px-6 hover:scale-[1.02] transition-transform">
+            <Button asChild size="lg" variant="outline" className="h-12 px-6 hover:scale-[1.02] transition-transform">
               <a href="#request">Описать проблему</a>
             </Button>
           </div>
