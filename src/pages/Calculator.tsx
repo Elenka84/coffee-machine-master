@@ -147,10 +147,7 @@ const Calculator = () => {
 
   return (
     <div className="min-h-screen text-foreground">
-      <header
-        className="sticky top-0 z-40 border-b border-border/60 bg-cover bg-center"
-        style={{ backgroundImage: `url(${heroBg})` }}
-      >
+      <header className="absolute top-0 left-0 right-0 z-40 bg-transparent">
         <div className="container flex h-32 items-center justify-between">
           <Link to="/" aria-label="Кофе Механикус — на главную" className="flex items-center">
             <BrandMark size="md" />
