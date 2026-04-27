@@ -302,7 +302,7 @@ const Index = () => {
       {/* Problems */}
       <RevealSection id="services" className="py-20 md:py-28 bg-cream">
         <div className="container">
-          <SectionHeader eyebrow="Проблемы" title="Какие проблемы устраняю" />
+          <SectionHeader eyebrow="Проблемы" title="Устраню любую проблему с кофемашиной" />
           <p className="mt-4 text-lg text-muted-foreground max-w-2xl">
             Определяю причину за 15–30 минут и сразу называю стоимость
           </p>
@@ -313,14 +313,14 @@ const Index = () => {
             {problems.map((p, i) => (
               <Magnet key={p.title} padding={40} magnetStrength={10}>
                 <Card
-                  className="float-card p-6 border-border/60 shadow-card hover:shadow-soft hover:-translate-y-0.5 transition-all duration-300 bg-background h-full"
+                  className="float-card p-6 border-coffee-dark/40 shadow-card hover:shadow-soft hover:-translate-y-0.5 transition-all duration-300 bg-coffee-dark text-primary-foreground h-full"
                   style={{ "--float-delay": `${i * 60}ms` } as React.CSSProperties}
                 >
-                  <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-cream mb-4">
-                    <p.icon className="h-5 w-5 text-coffee-dark" strokeWidth={1.5} />
+                  <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-primary-foreground/10 mb-4">
+                    <p.icon className="h-5 w-5 text-primary-foreground" strokeWidth={1.5} />
                   </div>
-                  <div className="font-semibold text-foreground">{p.title}</div>
-                  <div className="mt-1 text-sm text-muted-foreground leading-relaxed">{p.text}</div>
+                  <div className="font-semibold">{p.title}</div>
+                  <div className="mt-1 text-sm text-primary-foreground/70 leading-relaxed">{p.text}</div>
                 </Card>
               </Magnet>
             ))}
@@ -332,14 +332,6 @@ const Index = () => {
             </div>
             <Button asChild size="lg" className="h-12 px-6 hover:scale-[1.02] transition-transform">
               <a href="#request">Описать проблему</a>
-            </Button>
-          </div>
-          <div className="mt-12 flex flex-wrap gap-3">
-            <Button asChild size="lg" className="h-12 px-6 hover:scale-[1.02] transition-transform">
-              <a href="#request">Оставить заявку</a>
-            </Button>
-            <Button asChild size="lg" variant="outline" className="h-12 px-6 bg-background hover:scale-[1.02] transition-transform">
-              <Link to="/calculator"><CalcIcon className="h-4 w-4" />Рассчитать стоимость</Link>
             </Button>
           </div>
         </div>

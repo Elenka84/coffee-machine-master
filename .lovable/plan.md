@@ -1,49 +1,29 @@
-## Add Magnet animation to all site cards
+## Update the "Problems" section on the home page
 
-Wrap all card-like blocks across the site with a new `Magnet` component (from React Bits) so cards smoothly follow the cursor when it gets near them.
+All changes are in `src/pages/Index.tsx`, in the Problems block (around lines 305–344).
 
-### What will change
+### 1. Rename the section title
 
-A new reusable component will be created at `src/components/Magnet.tsx` (TypeScript port of the snippet you shared, no extra dependencies). Then it will wrap every card on the site:
+- Change `title="Какие проблемы устраняю"` → `title="Устраню любую проблему с кофемашиной"` in the `SectionHeader`.
 
-`**src/pages/Index.tsx**`
+### 2. Make the problem cards dark
 
-- 4 "Проблемы" cards (problems grid)
-- 2 "Отзывы" cards (reviews grid)
-- The `ContactCard` (phone) in the Contacts section
+Currently each card uses `bg-background` (light cream/white) with dark text. Switch them to a dark coffee surface that matches the existing "Условия работы" block lower on the page (`bg-coffee-dark text-primary-foreground`).
 
-`**src/pages/Calculator.tsx**`
+Specifically for each problem card:
+- Card classes: `bg-background` → `bg-coffee-dark text-primary-foreground border-coffee-dark/40`
+- Icon tile: `bg-cream` → `bg-primary-foreground/10`
+- Icon color: `text-coffee-dark` → `text-primary-foreground`
+- Title: keep `font-semibold` but ensure it inherits the light foreground color (no extra `text-foreground` override needed once the card text color is set; if present, drop it).
+- Description: `text-muted-foreground` → `text-primary-foreground/70` for readable contrast on dark.
 
-- All 4 cards in the calculator (machine select, options, additional services, result/total card)
+The "Не нашли свою проблему?" callout block below the grid stays as-is (light card with the "Описать проблему" button) — only the 6 problem cards become dark.
 
-### Magnet settings
+### 3. Remove the duplicate CTA buttons under the grid
 
-To keep the effect tasteful (cards are larger UI blocks, not buttons), defaults will be tuned per area:
-
-- Problems / Reviews / Calculator cards: `padding={40}`, `magnetStrength={8}` — subtle pull
-- Contact card (smaller): `padding={50}`, `magnetStrength={6}`
-
-The wrapper will use `display: block` and `width: 100%` so it doesn't break the existing grid layouts (the original snippet uses `inline-block`, which would shrink cards inside `grid`).
-
-### Technical details
-
-- Component file: `src/components/Magnet.tsx` — typed in TS, props: `padding`, `disabled`, `magnetStrength`, `activeTransition`, `inactiveTransition`, `wrapperClassName`, `innerClassName`, plus `children` and passthrough.
-- Mouse listener uses `mousemove` on `window`, cleaned up on unmount, respects `disabled` prop.
-- Wrapper style overridden to `display: block, width: 100%` (instead of `inline-block`) so cards still fill their grid cell. The inner div keeps the `translate3d` transform.
-- Existing `float-card` reveal animation, hover shadows, and `-translate-y-0.5` hover stay intact — Magnet only adds the cursor-follow translate on top.
-- No changes to Tailwind config, theme tokens, or other components.
+Delete the entire block at lines 337–344 (the `<div className="mt-12 flex flex-wrap gap-3">` containing the "Оставить заявку" and "Рассчитать стоимость" buttons). The "Описать проблему" CTA in the "Не нашли свою проблему?" card remains as the section's call to action.
 
 ### Out of scope
 
-- Buttons, inputs, badges, and section containers will not get the magnet effect — only the card components listed above.
-- Mobile (touch) behavior is unaffected since it relies on `mousemove`.
-  &nbsp;
-
-Сейчас: Определяю причину за 15–30 минут , надо сделать: Определяю причину за 15–30 минут и сразу называю стоимость
-
-добавь в блок:  ✔ 90% поломок устраняю в день обращения; Не нашли свою проблему?   
-Опишите её — подскажу решение
-
-```
-
-```
+- No changes to the header, hero CTAs, calculator page, or other sections.
+- The Magnet hover animation on the cards stays intact.
