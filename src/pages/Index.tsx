@@ -560,7 +560,7 @@ const Index = () => {
 
       {/* Mobile sticky call bar */}
       <div className="fixed bottom-0 left-0 right-0 z-40 md:hidden border-t border-border bg-background/95 backdrop-blur p-3">
-        <Button asChild size="lg" className="w-full h-12">
+        <Button asChild size="lg" variant="outline" className="w-full h-12 bg-background">
           <a href={PHONE_HREF}><Phone className="h-4 w-4" />Позвонить мастеру</a>
         </Button>
       </div>
