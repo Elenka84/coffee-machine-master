@@ -44,17 +44,6 @@ import {
 const DEFAULT_PHONE = "+7 (925) 035-23-22";
 const DEFAULT_PHONE_HREF = "tel:+79250352322";
 
-const services = [
-  { icon: Wrench, title: "Диагностика кофемашин" },
-  { icon: Cog, title: "Ремонт любой сложности" },
-  { icon: Droplets, title: "Замена помпы" },
-  { icon: Thermometer, title: "Замена термоблока" },
-  { icon: Coffee, title: "Ремонт кофемолки" },
-  { icon: Droplets, title: "Устранение протечек" },
-  { icon: Sparkles, title: "Чистка и обслуживание" },
-  { icon: Settings, title: "Ремонт заварочного блока" },
-  { icon: AlertCircle, title: "Устранение ошибок" },
-];
 
 const problems = [
   { icon: Power, title: "Не включается", text: "Питание, плата, кнопки" },
