@@ -551,7 +551,7 @@ const Index = () => {
         <div className="container flex flex-col md:flex-row gap-4 items-center justify-between">
           <BrandMark size="sm" hideTagline />
           <div className="flex items-center gap-2 text-sm text-foreground/80 text-center">
-            <MapPin className="h-4 w-4 shrink-0" /> Работаю в Лобня, Долгопрудный, Химки, Шереметьево и рядом
+            <MapPin className="h-4 w-4 shrink-0" /> Работаю в Лобне, Долгопрудном, Химках, Шереметьево и рядом
           </div>
           <p className="text-sm text-foreground/80">© {new Date().getFullYear()} · Частный мастер</p>
           <a href={PHONE_HREF} className="inline-flex items-center gap-2 text-sm font-medium text-coffee-dark hover:text-coffee-medium">
