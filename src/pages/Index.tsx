@@ -296,47 +296,39 @@ const Index = () => {
         </div>
       </RevealSection>
 
-      {/* Services */}
-      <RevealSection id="services" className="py-20 md:py-28">
+      {/* Problems */}
+      <RevealSection id="services" className="py-20 md:py-28 bg-cream">
         <div className="container">
-          <SectionHeader eyebrow="Услуги" title="Что я делаю" />
-          <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {services.map((s, i) => (
+          <SectionHeader eyebrow="Проблемы" title="Какие проблемы устраняю" />
+          <p className="mt-4 text-lg text-muted-foreground max-w-2xl">
+            Определяю причину за 15–30 минут
+          </p>
+          <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {problems.map((p, i) => (
               <Card
-                key={s.title}
-                className="float-card p-6 border-border/60 shadow-card hover:shadow-soft hover:-translate-y-0.5 transition-all duration-300"
-                style={{ "--float-delay": `${i * 70}ms` } as React.CSSProperties}
+                key={p.title}
+                className="float-card p-6 border-border/60 shadow-card hover:shadow-soft hover:-translate-y-0.5 transition-all duration-300 bg-background"
+                style={{ "--float-delay": `${i * 60}ms` } as React.CSSProperties}
               >
-                <div className="flex items-center gap-4">
-                  <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-cream">
-                    <s.icon className="h-5 w-5 text-coffee-dark" strokeWidth={1.5} />
-                  </div>
-                  <span className="font-medium text-foreground">{s.title}</span>
+                <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-cream mb-4">
+                  <p.icon className="h-5 w-5 text-coffee-dark" strokeWidth={1.5} />
                 </div>
+                <div className="font-semibold text-foreground">{p.title}</div>
+                <div className="mt-1 text-sm text-muted-foreground leading-relaxed">{p.text}</div>
               </Card>
             ))}
+          </div>
+          <div className="mt-12 flex flex-wrap gap-3">
+            <Button asChild size="lg" className="h-12 px-6 hover:scale-[1.02] transition-transform">
+              <a href="#request">Оставить заявку</a>
+            </Button>
+            <Button asChild size="lg" variant="outline" className="h-12 px-6 bg-background hover:scale-[1.02] transition-transform">
+              <Link to="/calculator"><CalcIcon className="h-4 w-4" />Рассчитать стоимость</Link>
+            </Button>
           </div>
         </div>
       </RevealSection>
 
-      {/* Faults */}
-      <RevealSection className="py-20 md:py-28 bg-cream">
-        <div className="container">
-          <SectionHeader eyebrow="Неисправности" title="С чем обращаются чаще всего" />
-          <div className="mt-12 grid gap-3 grid-cols-2 md:grid-cols-4">
-            {faults.map((f, i) => (
-              <div
-                key={f.label}
-                className="float-card flex items-center gap-3 rounded-lg bg-background px-4 py-4 border border-border/60 hover:border-coffee-medium transition-colors"
-                style={{ "--float-delay": `${i * 60}ms` } as React.CSSProperties}
-              >
-                <f.icon className="h-5 w-5 text-coffee-medium shrink-0" strokeWidth={1.5} />
-                <span className="text-sm font-medium text-foreground">{f.label}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </RevealSection>
 
       {/* Terms */}
       <RevealSection className="py-20 md:py-28">
