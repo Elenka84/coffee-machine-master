@@ -58,34 +58,43 @@
   }
 
   .dark {
-    --background: 22 20% 10%;
-    --foreground: 36 33% 94%;
-    --card: 22 20% 12%;
-    --card-foreground: 36 33% 94%;
-    --popover: 22 20% 12%;
-    --popover-foreground: 36 33% 94%;
-    --primary: 36 33% 94%;
-    --primary-foreground: 22 32% 19%;
-    --secondary: 22 15% 18%;
-    --secondary-foreground: 36 33% 94%;
-    --muted: 22 15% 18%;
-    --muted-foreground: 36 15% 70%;
-    --accent: 25 45% 55%;
-    --accent-foreground: 22 32% 12%;
-    --destructive: 0 62% 40%;
+    /* Warm coffee dark mode */
+    --background: 24 18% 9%;
+    --foreground: 36 33% 92%;
+    --card: 24 16% 13%;
+    --card-foreground: 36 33% 92%;
+    --popover: 24 16% 13%;
+    --popover-foreground: 36 33% 92%;
+
+    /* Caramel CTA on dark for visibility */
+    --primary: 30 46% 60%;
+    --primary-foreground: 22 41% 10%;
+
+    --secondary: 24 14% 18%;
+    --secondary-foreground: 36 33% 92%;
+
+    --muted: 24 14% 16%;
+    --muted-foreground: 32 18% 70%;
+
+    --accent: 30 46% 60%;
+    --accent-foreground: 22 41% 10%;
+
+    --destructive: 0 62% 45%;
     --destructive-foreground: 36 33% 94%;
-    --border: 22 15% 22%;
-    --input: 22 15% 22%;
-    --ring: 36 33% 94%;
 
-    /* Override coffee tokens so text stays readable on dark bg */
-    --cream: 22 15% 16%;
-    --coffee-dark: 36 33% 94%;
-    --coffee-medium: 30 40% 70%;
+    --border: 26 14% 22%;
+    --input: 26 14% 22%;
+    --ring: 30 46% 60%;
 
-    --gradient-hero: linear-gradient(135deg, hsl(22 22% 12%) 0%, hsl(22 18% 16%) 100%);
-    --shadow-soft: 0 4px 24px -8px hsl(0 0% 0% / 0.5);
-    --shadow-card: 0 2px 12px -4px hsl(0 0% 0% / 0.35);
+    /* Coffee tokens remapped for dark bg readability */
+    --cream: 24 14% 18%;
+    --coffee-dark: 36 33% 92%;
+    --coffee-medium: 30 46% 65%;
+    --graphite: 36 33% 92%;
+
+    --gradient-hero: linear-gradient(135deg, hsl(24 18% 10%) 0%, hsl(24 16% 14%) 100%);
+    --shadow-soft: 0 4px 24px -8px hsl(0 0% 0% / 0.6);
+    --shadow-card: 0 2px 12px -4px hsl(0 0% 0% / 0.45);
   }
 }
 
