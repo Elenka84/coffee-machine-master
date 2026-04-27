@@ -182,7 +182,7 @@ const Index = () => {
             </div>
 
             <div className="mt-8 flex flex-wrap gap-3 animate-fade-up" style={{ animationDelay: "220ms", animationFillMode: "backwards" }}>
-              <Button asChild size="lg" className="h-12 px-6 hover:scale-[1.02] transition-transform">
+              <Button asChild size="lg" variant="outline" className="h-12 px-6 hover:scale-[1.02] transition-transform">
                 <a href={PHONE_HREF}><Phone className="h-4 w-4" />Позвонить</a>
               </Button>
               <Button asChild size="lg" variant="outline" className="h-12 px-6 bg-background hover:scale-[1.02] transition-transform">
