@@ -231,7 +231,7 @@ const Index = () => {
       </section>
 
       {/* About master */}
-      <RevealSection className="relative py-20 md:py-28 overflow-hidden bg-[linear-gradient(135deg,hsl(36_40%_94%)_0%,hsl(30_30%_88%)_50%,hsl(25_35%_82%)_100%)]">
+      <RevealSection className="relative py-20 md:py-28 overflow-hidden bg-gradient-to-br from-card via-secondary to-muted">
         {/* Texture overlay */}
         <div
           className="pointer-events-none absolute inset-0 opacity-[0.18] mix-blend-multiply"
