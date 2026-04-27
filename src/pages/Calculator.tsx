@@ -307,7 +307,8 @@ const Calculator = () => {
               <p className="text-xs text-muted-foreground mt-4">
                 Цены ориентировочные, точная стоимость зависит от бренда, модели и наличия запчастей.
               </p>
-            </Card>
+              </Card>
+            </Magnet>
           </div>
         </div>
       </section>
