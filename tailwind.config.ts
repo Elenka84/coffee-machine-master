@@ -48,6 +48,13 @@ export default {
         cream: "hsl(var(--cream))",
         "coffee-dark": "hsl(var(--coffee-dark))",
         "coffee-medium": "hsl(var(--coffee-medium))",
+        problem: {
+          section: "hsl(var(--problem-section))",
+          card: "hsl(var(--problem-card))",
+          foreground: "hsl(var(--problem-card-foreground))",
+          muted: "hsl(var(--problem-card-muted))",
+          panel: "hsl(var(--problem-panel))",
+        },
         graphite: "hsl(var(--graphite))",
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",

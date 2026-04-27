@@ -42,6 +42,11 @@
     --coffee-dark: 22 43% 21%;
     --coffee-medium: 30 46% 60%;
     --graphite: 22 41% 12%;
+    --problem-section: 32 41% 84%;
+    --problem-card: 22 43% 21%;
+    --problem-card-foreground: 36 33% 95%;
+    --problem-card-muted: 32 41% 84%;
+    --problem-panel: 36 33% 95%;
 
     --gradient-hero: linear-gradient(135deg, hsl(36 33% 95%) 0%, hsl(33 33% 90%) 100%);
     --shadow-soft: 0 4px 24px -8px hsl(22 43% 16% / 0.18);
@@ -91,6 +96,11 @@
     --coffee-dark: 36 33% 92%;
     --coffee-medium: 30 46% 65%;
     --graphite: 36 33% 92%;
+    --problem-section: 24 18% 12%;
+    --problem-card: 31 24% 24%;
+    --problem-card-foreground: 36 33% 94%;
+    --problem-card-muted: 32 24% 78%;
+    --problem-panel: 24 14% 18%;
 
     --gradient-hero: linear-gradient(135deg, hsl(24 18% 10%) 0%, hsl(24 16% 14%) 100%);
     --shadow-soft: 0 4px 24px -8px hsl(0 0% 0% / 0.6);
