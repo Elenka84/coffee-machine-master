@@ -277,7 +277,7 @@ const Index = () => {
               </div>
 
               <div className="mt-6">
-                <Button asChild size="lg" className="h-12 px-6 hover:scale-[1.02] transition-transform">
+                <Button asChild size="lg" variant="outline" className="h-12 px-6 hover:scale-[1.02] transition-transform">
                   <Link to="/calculator">
                     <CalcIcon className="h-4 w-4" />
                     Узнать стоимость за 1 минуту
