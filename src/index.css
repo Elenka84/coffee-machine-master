@@ -93,6 +93,10 @@
   * {
     @apply border-border;
   }
+
+  .hero-title {
+    text-shadow: 0 4px 18px rgba(45, 28, 20, 0.18);
+  }
   body {
     @apply text-foreground font-sans;
     font-feature-settings: "ss01", "cv11";
