@@ -153,10 +153,12 @@ const Calculator = () => {
             <BrandMark size="md" />
           </Link>
           <div className="flex items-center gap-3">
-            <a href={PHONE_HREF} className="hidden sm:inline-flex items-center gap-2 text-sm font-medium text-foreground hover:text-coffee-medium transition-colors">
+            <a href={PHONE_HREF} className="hidden sm:inline-flex items-center gap-2 text-sm font-medium text-white drop-shadow-[0_2px_6px_rgba(0,0,0,0.6)] hover:text-cream transition-colors">
               <Phone className="h-4 w-4" />{PHONE}
             </a>
-            <ThemeToggle />
+            <div className="text-white drop-shadow-[0_2px_6px_rgba(0,0,0,0.6)] [&_button]:text-white [&_button:hover]:bg-white/10">
+              <ThemeToggle />
+            </div>
             <Button asChild size="sm" className="inline-flex shadow-card">
               <Link to="/"><ArrowLeft className="h-4 w-4" />На главную</Link>
             </Button>
