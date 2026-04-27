@@ -154,7 +154,7 @@ const Index = () => {
             <div className="inline-flex items-center gap-2 rounded-full bg-background/70 px-4 py-1.5 text-xs font-medium text-coffee-medium mb-6 border border-border/60 animate-fade-up">
               <Wrench className="h-3.5 w-3.5" /> Частный мастер · опыт работы более 12 лет
             </div>
-            <h1 className="font-display text-4xl md:text-6xl font-semibold text-coffee-dark leading-[1.05] animate-fade-up">
+            <h1 className="hero-title font-display text-4xl md:text-6xl font-semibold text-coffee-dark leading-[1.05] animate-fade-up">
               Кофемашина не работает?<br />Починю за 1 день без переплат
             </h1>
             <p className="mt-6 text-base md:text-lg text-muted-foreground max-w-2xl leading-relaxed animate-fade-up" style={{ animationDelay: "80ms", animationFillMode: "backwards" }}>
