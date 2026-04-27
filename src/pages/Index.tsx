@@ -130,6 +130,9 @@ const Index = () => {
             <BrandMark size="md" />
           </a>
           <div className="flex items-center gap-3">
+            <span className="hidden lg:inline-flex items-center gap-1.5 text-sm font-medium text-foreground">
+              <MapPin className="h-4 w-4 text-coffee-medium" />Работаю по Лобне и ближайшим районам
+            </span>
             <a href={PHONE_HREF} className="hidden sm:inline-flex items-center gap-2 text-sm font-medium text-foreground hover:text-coffee-medium transition-colors">
               <Phone className="h-4 w-4" />{PHONE}
             </a>
