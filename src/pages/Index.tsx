@@ -157,9 +157,13 @@ const Index = () => {
             <div className="inline-flex items-center gap-2 rounded-full bg-background/70 px-4 py-1.5 text-xs font-medium text-coffee-medium mb-6 border border-border/60 animate-fade-up">
               <Wrench className="h-3.5 w-3.5" /> Частный мастер · опыт работы более 12 лет
             </div>
-            <h1 className="hero-title font-display text-4xl md:text-6xl font-semibold text-coffee-dark leading-[1.05] animate-fade-up">
-              Кофемашина не работает?<br />Починю за 1 день без переплат
-            </h1>
+            <BlurText
+              text="Кофемашина не работает? Починю за 1 день без переплат"
+              delay={100}
+              animateBy="words"
+              direction="top"
+              className="hero-title font-display text-4xl md:text-6xl font-semibold text-coffee-dark leading-[1.05]"
+            />
             <p className="mt-6 text-base md:text-lg text-muted-foreground max-w-2xl leading-relaxed animate-fade-up" style={{ animationDelay: "80ms", animationFillMode: "backwards" }}>
               Выезд на дом или ремонт в мастерской.
             </p>
@@ -236,9 +240,13 @@ const Index = () => {
           <div className="grid gap-10 md:gap-14 md:grid-cols-2 items-center">
             <div>
               <div className="text-xs uppercase tracking-widest text-coffee-medium mb-4">О мастере</div>
-              <h2 className="font-display text-3xl md:text-4xl font-semibold text-coffee-dark leading-tight">
-                Батнасан — частный мастер по ремонту кофемашин
-              </h2>
+              <BlurText
+                text="Батнасан — частный мастер по ремонту кофемашин"
+                delay={100}
+                animateBy="words"
+                direction="top"
+                className="font-display text-3xl md:text-4xl font-semibold text-coffee-dark leading-tight"
+              />
               <p className="mt-4 text-lg text-muted-foreground">
                 Опыт работы более 12 лет. Ремонтирую лично, без посредников.
               </p>
@@ -289,16 +297,7 @@ const Index = () => {
       {/* Problems */}
       <RevealSection id="services" className="py-20 md:py-28 bg-cream">
         <div className="container">
-          <div>
-            <div className="text-xs uppercase tracking-widest text-coffee-medium font-semibold">Проблемы</div>
-            <BlurText
-              text="Какие проблемы устраняю"
-              delay={120}
-              animateBy="words"
-              direction="top"
-              className="font-display mt-3 text-3xl md:text-4xl font-semibold text-coffee-dark leading-tight max-w-2xl"
-            />
-          </div>
+          <SectionHeader eyebrow="Проблемы" title="Какие проблемы устраняю" />
           <p className="mt-4 text-lg text-muted-foreground max-w-2xl">
             Определяю причину за 15–30 минут
           </p>
@@ -334,9 +333,13 @@ const Index = () => {
         <div className="container">
           <div className="mx-auto max-w-4xl rounded-2xl bg-coffee-dark text-primary-foreground p-8 md:p-14 shadow-soft">
             <div className="text-xs uppercase tracking-widest text-primary-foreground/60 mb-4">Условия работы</div>
-            <h2 className="font-display text-3xl md:text-4xl font-semibold leading-tight text-primary-foreground">
-              Прозрачно, честно и без скрытых платежей
-            </h2>
+            <BlurText
+              text="Прозрачно, честно и без скрытых платежей"
+              delay={100}
+              animateBy="words"
+              direction="top"
+              className="font-display text-3xl md:text-4xl font-semibold leading-tight text-primary-foreground"
+            />
             <ul className="mt-8 space-y-4">
               {[
                 "Сумма ремонта обсуждается после диагностики.",
@@ -487,7 +490,13 @@ const Index = () => {
           <div className="mx-auto max-w-3xl">
             <div className="flex items-center gap-3 mb-6">
               <FileText className="h-6 w-6 text-coffee-medium" strokeWidth={1.5} />
-              <h2 className="font-display text-2xl md:text-3xl font-semibold text-coffee-dark">Политика конфиденциальности</h2>
+              <BlurText
+                text="Политика конфиденциальности"
+                delay={100}
+                animateBy="words"
+                direction="top"
+                className="font-display text-2xl md:text-3xl font-semibold text-coffee-dark"
+              />
             </div>
             <div className="space-y-4 text-sm md:text-base text-muted-foreground leading-relaxed">
               <p>
@@ -565,9 +574,13 @@ const RevealSection = ({
 const SectionHeader = ({ eyebrow, title, centered }: { eyebrow: string; title: string; centered?: boolean }) => (
   <div className={centered ? "text-center" : ""}>
     <div className="text-xs uppercase tracking-widest text-coffee-medium font-semibold">{eyebrow}</div>
-    <h2 className={`font-display mt-3 text-3xl md:text-4xl font-semibold text-coffee-dark leading-tight max-w-2xl ${centered ? "mx-auto" : ""}`}>
-      {title}
-    </h2>
+    <BlurText
+      text={title}
+      delay={120}
+      animateBy="words"
+      direction="top"
+      className={`font-display mt-3 text-3xl md:text-4xl font-semibold text-coffee-dark leading-tight max-w-2xl ${centered ? "mx-auto justify-center" : ""}`}
+    />
   </div>
 );
 

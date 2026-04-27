@@ -6,6 +6,7 @@ import { ThemeToggle } from "@/components/ThemeToggle";
 import heroBg from "@/assets/hero-bg.png";
 import { useSiteSettings } from "@/hooks/useSiteSettings";
 import { BrandMark } from "@/components/BrandMark";
+import BlurText from "@/components/BlurText";
 import {
   Coffee,
   Phone,
@@ -176,9 +177,13 @@ const Calculator = () => {
       <section className="container pt-10 md:pt-14">
         <div className="rounded-2xl border border-coffee-medium/30 bg-gradient-hero p-6 md:p-8 shadow-card flex flex-col md:flex-row md:items-center md:justify-between gap-4">
           <div>
-            <h2 className="font-display text-2xl md:text-3xl font-bold text-coffee-dark">
-              Не хотите разбираться?
-            </h2>
+            <BlurText
+              text="Не хотите разбираться?"
+              delay={100}
+              animateBy="words"
+              direction="top"
+              className="font-display text-2xl md:text-3xl font-bold text-coffee-dark"
+            />
             <p className="text-base md:text-lg text-muted-foreground mt-1">
               Опишите проблему — скажу стоимость.
             </p>
@@ -193,7 +198,7 @@ const Calculator = () => {
         <div className="grid lg:grid-cols-[1fr_360px] gap-6">
           <div className="space-y-6">
             <Card className="p-6">
-              <h2 className="font-display text-xl font-semibold text-coffee-dark mb-4">1) Параметры заказа</h2>
+              <BlurText text="1) Параметры заказа" delay={80} animateBy="words" direction="top" className="font-display text-xl font-semibold text-coffee-dark mb-4" />
               <div className="grid md:grid-cols-2 gap-4">
                 <div>
                   <label className="block text-sm font-medium mb-2">Тип кофемашины</label>
@@ -233,7 +238,7 @@ const Calculator = () => {
             </Card>
 
             <Card className="p-6">
-              <h2 className="font-display text-xl font-semibold text-coffee-dark mb-1">2) Частые поломки</h2>
+              <BlurText text="2) Частые поломки" delay={80} animateBy="words" direction="top" className="font-display text-xl font-semibold text-coffee-dark mb-1" />
               <p className="text-sm text-muted-foreground mb-4">
                 Примерный диапазон стоимости работ без учета запчастей.
               </p>
@@ -243,7 +248,7 @@ const Calculator = () => {
             </Card>
 
             <Card className="p-6">
-              <h2 className="font-display text-xl font-semibold text-coffee-dark mb-4">3) Дополнительные работы</h2>
+              <BlurText text="3) Дополнительные работы" delay={80} animateBy="words" direction="top" className="font-display text-xl font-semibold text-coffee-dark mb-4" />
               <div className="grid sm:grid-cols-2 gap-2">
                 {EXTRAS.map((o) => renderItem(o, extras, setExtras))}
               </div>
@@ -252,7 +257,7 @@ const Calculator = () => {
 
           <div className="lg:sticky lg:top-20 lg:self-start space-y-4">
             <Card className="p-4 sm:p-6 bg-gradient-hero border-coffee-medium/30">
-              <h2 className="font-display text-xl font-semibold text-coffee-dark mb-1">Итог</h2>
+              <BlurText text="Итог" delay={80} animateBy="letters" direction="top" className="font-display text-xl font-semibold text-coffee-dark mb-1" />
               <p className="text-xs text-muted-foreground mb-4">Предварительная оценка</p>
               <div className="text-2xl sm:text-3xl font-display font-bold text-coffee-dark tabular-nums break-words">
                 {calc.total.min === 0 && calc.total.max === 0
