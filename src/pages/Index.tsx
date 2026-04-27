@@ -56,15 +56,15 @@ const services = [
   { icon: AlertCircle, title: "Устранение ошибок" },
 ];
 
-const faults = [
-  { icon: Power, label: "Не включается" },
-  { icon: Droplets, label: "Не подает воду" },
-  { icon: Flame, label: "Не греет" },
-  { icon: Waves, label: "Течет" },
-  { icon: Coffee, label: "Не мелет кофе" },
-  { icon: XCircle, label: "Не варит кофе" },
-  { icon: AlertTriangle, label: "Выдает ошибку" },
-  { icon: Gauge, label: "Плохо работает" },
+const problems = [
+  { icon: Power, title: "Не включается", text: "Питание, плата, кнопки" },
+  { icon: XCircle, title: "Плохо варит кофе", text: "Чистка, настройка, заварочный блок" },
+  { icon: Gauge, title: "Шумит или работает с перебоями", text: "Механика, насос, износ деталей" },
+  { icon: Droplets, title: "Не подает воду", text: "Замена помпы, чистка системы" },
+  { icon: Waves, title: "Протекает", text: "Замена уплотнений" },
+  { icon: Coffee, title: "Не мелет кофе", text: "Ремонт кофемолки" },
+  { icon: Flame, title: "Не греет", text: "Ремонт термоблока" },
+  { icon: AlertTriangle, title: "Выдает ошибку", text: "Диагностика и устранение" },
 ];
 
 const advantages = [
