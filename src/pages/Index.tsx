@@ -145,8 +145,8 @@ const Index = () => {
                 <a href={PHONE_HREF} aria-label="Позвонить"><Phone className="h-4 w-4" /></a>
               </Button>
             </div>
-            <span className="hidden md:inline-flex items-center gap-1.5 text-xs font-medium text-muted-foreground">
-              <MapPin className="h-3.5 w-3.5 text-coffee-medium" />Лобня, Долгопрудный, Химки, Шереметьево и рядом
+            <span className="hidden md:inline-flex items-center gap-2 text-sm font-semibold text-foreground">
+              <MapPin className="h-4 w-4 text-coffee-medium" />Лобня, Долгопрудный, Химки, Шереметьево и рядом
             </span>
           </div>
         </div>
