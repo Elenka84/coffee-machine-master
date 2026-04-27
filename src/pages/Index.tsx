@@ -11,6 +11,7 @@ import { supabase } from "@/integrations/supabase/client";
 import masterPhoto from "@/assets/master-batnasan.png";
 import heroBg from "@/assets/hero-bg.png";
 import { BrandMark } from "@/components/BrandMark";
+import BlurText from "@/components/BlurText";
 import {
   Phone,
   Wrench,
@@ -288,7 +289,16 @@ const Index = () => {
       {/* Problems */}
       <RevealSection id="services" className="py-20 md:py-28 bg-cream">
         <div className="container">
-          <SectionHeader eyebrow="Проблемы" title="Какие проблемы устраняю" />
+          <div>
+            <div className="text-xs uppercase tracking-widest text-coffee-medium font-semibold">Проблемы</div>
+            <BlurText
+              text="Какие проблемы устраняю"
+              delay={120}
+              animateBy="words"
+              direction="top"
+              className="font-display mt-3 text-3xl md:text-4xl font-semibold text-coffee-dark leading-tight max-w-2xl"
+            />
+          </div>
           <p className="mt-4 text-lg text-muted-foreground max-w-2xl">
             Определяю причину за 15–30 минут
           </p>
