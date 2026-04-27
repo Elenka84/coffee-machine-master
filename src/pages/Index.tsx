@@ -96,6 +96,19 @@ const Index = () => {
   const { data: settings } = useSiteSettings();
   const PHONE = settings?.phone ?? DEFAULT_PHONE;
   const PHONE_HREF = settings?.phone_href ?? DEFAULT_PHONE_HREF;
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.hash) {
+      const id = location.hash.slice(1);
+      // Wait for content to render, then scroll
+      const t = setTimeout(() => {
+        const el = document.getElementById(id);
+        if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+      }, 100);
+      return () => clearTimeout(t);
+    }
+  }, [location.hash, location.key]);
 
   const { data: brandsData } = useQuery({
     queryKey: ["public-machines"],
