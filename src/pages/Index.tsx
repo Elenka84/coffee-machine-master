@@ -12,6 +12,7 @@ import masterPhoto from "@/assets/master-batnasan.png";
 import heroBg from "@/assets/hero-bg.png";
 import { BrandMark } from "@/components/BrandMark";
 import BlurText from "@/components/BlurText";
+import Magnet from "@/components/Magnet";
 import {
   Phone,
   Wrench,
@@ -303,22 +304,35 @@ const Index = () => {
         <div className="container">
           <SectionHeader eyebrow="Проблемы" title="Какие проблемы устраняю" />
           <p className="mt-4 text-lg text-muted-foreground max-w-2xl">
-            Определяю причину за 15–30 минут
+            Определяю причину за 15–30 минут и сразу называю стоимость
+          </p>
+          <p className="mt-2 text-base text-coffee-medium font-medium max-w-2xl">
+            ✔ 90% поломок устраняю в день обращения
           </p>
           <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {problems.map((p, i) => (
-              <Card
-                key={p.title}
-                className="float-card p-6 border-border/60 shadow-card hover:shadow-soft hover:-translate-y-0.5 transition-all duration-300 bg-background"
-                style={{ "--float-delay": `${i * 60}ms` } as React.CSSProperties}
-              >
-                <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-cream mb-4">
-                  <p.icon className="h-5 w-5 text-coffee-dark" strokeWidth={1.5} />
-                </div>
-                <div className="font-semibold text-foreground">{p.title}</div>
-                <div className="mt-1 text-sm text-muted-foreground leading-relaxed">{p.text}</div>
-              </Card>
+              <Magnet key={p.title} padding={40} magnetStrength={10}>
+                <Card
+                  className="float-card p-6 border-border/60 shadow-card hover:shadow-soft hover:-translate-y-0.5 transition-all duration-300 bg-background h-full"
+                  style={{ "--float-delay": `${i * 60}ms` } as React.CSSProperties}
+                >
+                  <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-cream mb-4">
+                    <p.icon className="h-5 w-5 text-coffee-dark" strokeWidth={1.5} />
+                  </div>
+                  <div className="font-semibold text-foreground">{p.title}</div>
+                  <div className="mt-1 text-sm text-muted-foreground leading-relaxed">{p.text}</div>
+                </Card>
+              </Magnet>
             ))}
+          </div>
+          <div className="mt-8 rounded-2xl border border-border/60 bg-background p-6 md:p-7 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 shadow-card">
+            <div>
+              <div className="font-display text-lg font-semibold text-coffee-dark">Не нашли свою проблему?</div>
+              <p className="text-sm text-muted-foreground mt-1">Опишите её — подскажу решение</p>
+            </div>
+            <Button asChild size="lg" className="h-12 px-6 hover:scale-[1.02] transition-transform">
+              <a href="#request">Описать проблему</a>
+            </Button>
           </div>
           <div className="mt-12 flex flex-wrap gap-3">
             <Button asChild size="lg" className="h-12 px-6 hover:scale-[1.02] transition-transform">
@@ -437,22 +451,23 @@ const Index = () => {
           <SectionHeader eyebrow="Отзывы" title="Что говорят клиенты" />
           <div className="mt-12 grid gap-6 sm:grid-cols-2">
             {reviews.map((r, i) => (
-              <Card
-                key={r.name}
-                className="float-card p-6 border-border/60 shadow-card hover:shadow-soft transition-shadow"
-                style={{ "--float-delay": `${i * 120}ms` } as React.CSSProperties}
-              >
-                <div className="flex gap-0.5 text-coffee-medium">
-                  {Array.from({ length: 5 }).map((_, i) => (
-                    <Star key={i} className="h-4 w-4 fill-current" />
-                  ))}
-                </div>
-                <p className="mt-4 text-foreground leading-relaxed">«{r.text}»</p>
-                <div className="mt-5 pt-5 border-t border-border/60 flex items-baseline justify-between">
-                  <span className="font-medium text-coffee-dark">{r.name}</span>
-                  <span className="text-sm text-muted-foreground">{r.machine}</span>
-                </div>
-              </Card>
+              <Magnet key={r.name} padding={40} magnetStrength={10}>
+                <Card
+                  className="float-card p-6 border-border/60 shadow-card hover:shadow-soft transition-shadow h-full"
+                  style={{ "--float-delay": `${i * 120}ms` } as React.CSSProperties}
+                >
+                  <div className="flex gap-0.5 text-coffee-medium">
+                    {Array.from({ length: 5 }).map((_, i) => (
+                      <Star key={i} className="h-4 w-4 fill-current" />
+                    ))}
+                  </div>
+                  <p className="mt-4 text-foreground leading-relaxed">«{r.text}»</p>
+                  <div className="mt-5 pt-5 border-t border-border/60 flex items-baseline justify-between">
+                    <span className="font-medium text-coffee-dark">{r.name}</span>
+                    <span className="text-sm text-muted-foreground">{r.machine}</span>
+                  </div>
+                </Card>
+              </Magnet>
             ))}
           </div>
         </div>
@@ -482,7 +497,11 @@ const Index = () => {
               <Clock className="h-4 w-4" /> Отвечаю в течение 15 минут
             </div>
             <div className="mt-10 flex justify-center">
-              <ContactCard href={PHONE_HREF} icon={Phone} label="Телефон" value={PHONE} />
+              <div className="inline-block">
+                <Magnet padding={50} magnetStrength={6}>
+                  <ContactCard href={PHONE_HREF} icon={Phone} label="Телефон" value={PHONE} />
+                </Magnet>
+              </div>
             </div>
           </div>
         </div>

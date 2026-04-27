@@ -7,6 +7,7 @@ import heroBg from "@/assets/hero-bg.png";
 import { useSiteSettings } from "@/hooks/useSiteSettings";
 import { BrandMark } from "@/components/BrandMark";
 import BlurText from "@/components/BlurText";
+import Magnet from "@/components/Magnet";
 import {
   Coffee,
   Phone,
@@ -197,66 +198,73 @@ const Calculator = () => {
       <section className="container py-10 md:py-14">
         <div className="grid lg:grid-cols-[1fr_360px] gap-6">
           <div className="space-y-6">
-            <Card className="p-6">
-              <BlurText text="1) Параметры заказа" delay={80} animateBy="words" direction="top" className="font-display text-xl font-semibold text-coffee-dark mb-4" />
-              <div className="grid md:grid-cols-2 gap-4">
-                <div>
-                  <label className="block text-sm font-medium mb-2">Тип кофемашины</label>
-                  <div className="grid grid-cols-2 rounded-xl border border-border bg-background p-1">
-                    {([["auto", "Автоматическая"], ["builtin", "Встраиваемая"]] as const).map(([v, l]) => (
-                      <button
-                        key={v}
-                        type="button"
-                        onClick={() => setType(v)}
-                        className={`rounded-lg px-3 py-2 text-sm font-semibold transition-colors ${
-                          type === v ? "bg-cream text-coffee-dark shadow-card" : "text-muted-foreground hover:text-foreground"
-                        }`}
-                      >
-                        {l}
-                      </button>
-                    ))}
+            <Magnet padding={40} magnetStrength={12}>
+              <Card className="p-6">
+                <BlurText text="1) Параметры заказа" delay={80} animateBy="words" direction="top" className="font-display text-xl font-semibold text-coffee-dark mb-4" />
+                <div className="grid md:grid-cols-2 gap-4">
+                  <div>
+                    <label className="block text-sm font-medium mb-2">Тип кофемашины</label>
+                    <div className="grid grid-cols-2 rounded-xl border border-border bg-background p-1">
+                      {([["auto", "Автоматическая"], ["builtin", "Встраиваемая"]] as const).map(([v, l]) => (
+                        <button
+                          key={v}
+                          type="button"
+                          onClick={() => setType(v)}
+                          className={`rounded-lg px-3 py-2 text-sm font-semibold transition-colors ${
+                            type === v ? "bg-cream text-coffee-dark shadow-card" : "text-muted-foreground hover:text-foreground"
+                          }`}
+                        >
+                          {l}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium mb-2">Диагностика</label>
+                    <label className="flex items-start gap-3 rounded-xl border border-border bg-card p-3 cursor-pointer">
+                      <input
+                        type="checkbox"
+                        className="mt-1 h-4 w-4 accent-coffee-medium"
+                        checked={diagFree}
+                        onChange={(e) => setDiagFree(e.target.checked)}
+                      />
+                      <div>
+                        <div className="text-sm font-semibold text-coffee-dark">Бесплатно при согласии на ремонт</div>
+                        <div className="text-xs text-muted-foreground mt-0.5">
+                          Если выбраны работы по ремонту — диагностика не добавляется к итогу.
+                        </div>
+                      </div>
+                    </label>
                   </div>
                 </div>
-                <div>
-                  <label className="block text-sm font-medium mb-2">Диагностика</label>
-                  <label className="flex items-start gap-3 rounded-xl border border-border bg-card p-3 cursor-pointer">
-                    <input
-                      type="checkbox"
-                      className="mt-1 h-4 w-4 accent-coffee-medium"
-                      checked={diagFree}
-                      onChange={(e) => setDiagFree(e.target.checked)}
-                    />
-                    <div>
-                      <div className="text-sm font-semibold text-coffee-dark">Бесплатно при согласии на ремонт</div>
-                      <div className="text-xs text-muted-foreground mt-0.5">
-                        Если выбраны работы по ремонту — диагностика не добавляется к итогу.
-                      </div>
-                    </div>
-                  </label>
+              </Card>
+            </Magnet>
+
+            <Magnet padding={40} magnetStrength={12}>
+              <Card className="p-6">
+                <BlurText text="2) Частые поломки" delay={80} animateBy="words" direction="top" className="font-display text-xl font-semibold text-coffee-dark mb-1" />
+                <p className="text-sm text-muted-foreground mb-4">
+                  Примерный диапазон стоимости работ без учета запчастей.
+                </p>
+                <div className="grid sm:grid-cols-2 gap-2">
+                  {FAULTS.map((o) => renderItem(o, faults, setFaults))}
                 </div>
-              </div>
-            </Card>
+              </Card>
+            </Magnet>
 
-            <Card className="p-6">
-              <BlurText text="2) Частые поломки" delay={80} animateBy="words" direction="top" className="font-display text-xl font-semibold text-coffee-dark mb-1" />
-              <p className="text-sm text-muted-foreground mb-4">
-                Примерный диапазон стоимости работ без учета запчастей.
-              </p>
-              <div className="grid sm:grid-cols-2 gap-2">
-                {FAULTS.map((o) => renderItem(o, faults, setFaults))}
-              </div>
-            </Card>
-
-            <Card className="p-6">
-              <BlurText text="3) Дополнительные работы" delay={80} animateBy="words" direction="top" className="font-display text-xl font-semibold text-coffee-dark mb-4" />
-              <div className="grid sm:grid-cols-2 gap-2">
-                {EXTRAS.map((o) => renderItem(o, extras, setExtras))}
-              </div>
-            </Card>
+            <Magnet padding={40} magnetStrength={12}>
+              <Card className="p-6">
+                <BlurText text="3) Дополнительные работы" delay={80} animateBy="words" direction="top" className="font-display text-xl font-semibold text-coffee-dark mb-4" />
+                <div className="grid sm:grid-cols-2 gap-2">
+                  {EXTRAS.map((o) => renderItem(o, extras, setExtras))}
+                </div>
+              </Card>
+            </Magnet>
           </div>
 
           <div className="lg:sticky lg:top-20 lg:self-start space-y-4">
-            <Card className="p-4 sm:p-6 bg-gradient-hero border-coffee-medium/30">
+            <Magnet padding={40} magnetStrength={12}>
+              <Card className="p-4 sm:p-6 bg-gradient-hero border-coffee-medium/30">
               <BlurText text="Итог" delay={80} animateBy="letters" direction="top" className="font-display text-xl font-semibold text-coffee-dark mb-1" />
               <p className="text-xs text-muted-foreground mb-4">Предварительная оценка</p>
               <div className="text-2xl sm:text-3xl font-display font-bold text-coffee-dark tabular-nums break-words">
@@ -299,7 +307,8 @@ const Calculator = () => {
               <p className="text-xs text-muted-foreground mt-4">
                 Цены ориентировочные, точная стоимость зависит от бренда, модели и наличия запчастей.
               </p>
-            </Card>
+              </Card>
+            </Magnet>
           </div>
         </div>
       </section>
