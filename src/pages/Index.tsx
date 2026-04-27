@@ -219,19 +219,18 @@ const Index = () => {
       </section>
 
       {/* About master */}
-      <RevealSection className="py-20 md:py-28 bg-cream">
-        <div className="container">
+      <RevealSection className="relative py-20 md:py-28 overflow-hidden bg-[linear-gradient(135deg,hsl(36_40%_94%)_0%,hsl(30_30%_88%)_50%,hsl(25_35%_82%)_100%)]">
+        {/* Texture overlay */}
+        <div
+          className="pointer-events-none absolute inset-0 opacity-[0.18] mix-blend-multiply"
+          style={{
+            backgroundImage:
+              "url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.27 0 0 0 0 0.17 0 0 0 0 0.12 0 0 0 0.55 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>\")",
+          }}
+          aria-hidden="true"
+        />
+        <div className="container relative">
           <div className="grid gap-10 md:gap-14 md:grid-cols-2 items-center">
-            <div className="relative">
-              <div className="overflow-hidden rounded-2xl border border-border/60 shadow-soft bg-background">
-                <img
-                  src={masterPhoto}
-                  alt="Батнасан — частный мастер по ремонту кофемашин"
-                  className="w-full h-auto object-cover"
-                  loading="lazy"
-                />
-              </div>
-            </div>
             <div>
               <div className="text-xs uppercase tracking-widest text-coffee-medium mb-4">О мастере</div>
               <h2 className="font-display text-3xl md:text-4xl font-semibold text-coffee-dark leading-tight">
@@ -255,7 +254,7 @@ const Index = () => {
                 ))}
               </ul>
 
-              <div className="mt-8 rounded-xl border border-border/60 bg-background px-5 py-4 shadow-card">
+              <div className="mt-8 rounded-xl border border-border/60 bg-background/80 backdrop-blur px-5 py-4 shadow-card">
                 <p className="text-sm md:text-base text-foreground">
                   Можете просто описать проблему — <span className="font-semibold text-coffee-dark">подскажу предварительно бесплатно</span>.
                 </p>
@@ -268,6 +267,16 @@ const Index = () => {
                     Узнать стоимость за 1 минуту
                   </Link>
                 </Button>
+              </div>
+            </div>
+            <div className="relative">
+              <div className="overflow-hidden rounded-2xl border border-border/60 shadow-soft bg-background">
+                <img
+                  src={masterPhoto}
+                  alt="Батнасан — частный мастер по ремонту кофемашин"
+                  className="w-full h-auto object-cover"
+                  loading="lazy"
+                />
               </div>
             </div>
           </div>
