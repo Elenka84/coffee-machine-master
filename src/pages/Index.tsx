@@ -40,6 +40,7 @@ import {
   Gauge,
   FileText,
   Calculator as CalcIcon,
+  Mail,
 } from "lucide-react";
 
 // Defaults — overridden by site_settings from DB
@@ -488,12 +489,13 @@ const Index = () => {
             <div className="mt-4 inline-flex items-center gap-2 text-sm text-coffee-medium">
               <Clock className="h-4 w-4" /> Отвечаю в течение 15 минут
             </div>
-            <div className="mt-10 flex justify-center">
-              <div className="inline-block">
-                <Magnet padding={50} magnetStrength={6}>
-                  <ContactCard href={PHONE_HREF} icon={Phone} label="Телефон" value={PHONE} />
-                </Magnet>
-              </div>
+            <div className="mt-10 flex flex-wrap justify-center gap-6">
+              <Magnet padding={50} magnetStrength={6}>
+                <ContactCard href={PHONE_HREF} icon={Phone} label="Телефон" value="+7 (925) 035-23-22" />
+              </Magnet>
+              <Magnet padding={50} magnetStrength={6}>
+                <ContactCard href="mailto:solnce_2322@mail.ru" icon={Mail} label="Почта" value="solnce_2322@mail.ru" />
+              </Magnet>
             </div>
           </div>
         </div>
@@ -548,8 +550,8 @@ const Index = () => {
       <footer className="border-t border-border/60 bg-background/85 backdrop-blur-sm py-10 pb-24 md:pb-10 text-foreground">
         <div className="container flex flex-col md:flex-row gap-4 items-center justify-between">
           <BrandMark size="sm" hideTagline />
-          <div className="flex items-center gap-2 text-sm text-foreground/80">
-            <MapPin className="h-4 w-4" /> Работаю по городу и ближайшему району
+          <div className="flex items-center gap-2 text-sm text-foreground/80 text-center">
+            <MapPin className="h-4 w-4 shrink-0" /> Работаю в Лобня, Долгопрудный, Химки, Шереметьево и рядом
           </div>
           <p className="text-sm text-foreground/80">© {new Date().getFullYear()} · Частный мастер</p>
           <a href={PHONE_HREF} className="inline-flex items-center gap-2 text-sm font-medium text-coffee-dark hover:text-coffee-medium">
