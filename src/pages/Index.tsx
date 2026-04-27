@@ -121,7 +121,7 @@ const Index = () => {
   return (
     <div className="min-h-screen text-foreground">
       {/* Header */}
-      <header className="sticky top-0 z-40 border-b border-border/60 bg-background/80 backdrop-blur-md">
+      <header className="absolute top-0 left-0 right-0 z-40 bg-transparent">
         <div className="container flex h-32 items-center justify-between">
           <a href="#" aria-label="Кофе Механикус — на главную" className="flex items-center">
             <BrandMark size="md" />
@@ -149,7 +149,7 @@ const Index = () => {
         className="bg-cover bg-center"
         style={{ backgroundImage: `url(${heroBg})` }}
       >
-        <div className="container py-16 md:py-28">
+        <div className="container pt-40 md:pt-44 pb-16 md:pb-28">
           <div className="max-w-3xl">
             <div className="inline-flex items-center gap-2 rounded-full bg-background/70 px-4 py-1.5 text-xs font-medium text-coffee-medium mb-6 border border-border/60 animate-fade-up">
               <Wrench className="h-3.5 w-3.5" /> Частный мастер · опыт работы более 12 лет
