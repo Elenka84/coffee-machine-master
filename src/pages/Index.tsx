@@ -129,23 +129,25 @@ const Index = () => {
           <a href="#" aria-label="Кофе Механикус — на главную" className="flex items-center">
             <BrandMark size="md" />
           </a>
-          <div className="flex items-center gap-3">
-            <span className="hidden lg:inline-flex items-center gap-1.5 text-sm font-medium text-foreground">
-              <MapPin className="h-4 w-4 text-coffee-medium" />Лобня, Долгопрудный, Химки, Шереметьево и рядом
+          <div className="flex flex-col items-end gap-1.5">
+            <div className="flex items-center gap-3">
+              <a href={PHONE_HREF} className="hidden sm:inline-flex items-center gap-2 text-sm font-medium text-foreground hover:text-coffee-medium transition-colors">
+                <Phone className="h-4 w-4" />{PHONE}
+              </a>
+              <ThemeToggle />
+              <Button asChild size="sm" variant="outline" className="inline-flex">
+                <Link to="/calculator"><CalcIcon className="h-4 w-4" /><span className="hidden sm:inline">Рассчитать стоимость</span></Link>
+              </Button>
+              <Button asChild size="sm" className="hidden sm:inline-flex">
+                <a href="#request">Оставить заявку</a>
+              </Button>
+              <Button asChild size="icon" variant="outline" className="sm:hidden">
+                <a href={PHONE_HREF} aria-label="Позвонить"><Phone className="h-4 w-4" /></a>
+              </Button>
+            </div>
+            <span className="hidden md:inline-flex items-center gap-1.5 text-xs font-medium text-muted-foreground">
+              <MapPin className="h-3.5 w-3.5 text-coffee-medium" />Лобня, Долгопрудный, Химки, Шереметьево и рядом
             </span>
-            <a href={PHONE_HREF} className="hidden sm:inline-flex items-center gap-2 text-sm font-medium text-foreground hover:text-coffee-medium transition-colors">
-              <Phone className="h-4 w-4" />{PHONE}
-            </a>
-            <ThemeToggle />
-            <Button asChild size="sm" variant="outline" className="inline-flex">
-              <Link to="/calculator"><CalcIcon className="h-4 w-4" /><span className="hidden sm:inline">Рассчитать стоимость</span></Link>
-            </Button>
-            <Button asChild size="sm" className="hidden sm:inline-flex">
-              <a href="#request">Оставить заявку</a>
-            </Button>
-            <Button asChild size="icon" variant="outline" className="sm:hidden">
-              <a href={PHONE_HREF} aria-label="Позвонить"><Phone className="h-4 w-4" /></a>
-            </Button>
           </div>
         </div>
       </header>
