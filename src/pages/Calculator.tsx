@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { ThemeToggle } from "@/components/ThemeToggle";
+import heroBg from "@/assets/hero-bg.png";
 import { useSiteSettings } from "@/hooks/useSiteSettings";
 import { BrandMark } from "@/components/BrandMark";
 import {
@@ -146,7 +147,10 @@ const Calculator = () => {
 
   return (
     <div className="min-h-screen text-foreground">
-      <header className="sticky top-0 z-40 border-b border-border/60 bg-background/80 backdrop-blur-md">
+      <header
+        className="sticky top-0 z-40 border-b border-border/60 bg-cover bg-center"
+        style={{ backgroundImage: `url(${heroBg})` }}
+      >
         <div className="container flex h-32 items-center justify-between">
           <Link to="/" aria-label="Кофе Механикус — на главную" className="flex items-center">
             <BrandMark size="md" />
