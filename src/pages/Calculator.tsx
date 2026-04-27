@@ -173,6 +173,22 @@ const Calculator = () => {
         <div className="container h-32" />
       </section>
 
+      <section className="container pt-10 md:pt-14">
+        <div className="rounded-2xl border border-coffee-medium/30 bg-gradient-hero p-6 md:p-8 shadow-card flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+          <div>
+            <h2 className="font-display text-2xl md:text-3xl font-bold text-coffee-dark">
+              Не хотите разбираться?
+            </h2>
+            <p className="text-base md:text-lg text-muted-foreground mt-1">
+              Опишите проблему — скажу стоимость.
+            </p>
+          </div>
+          <Button asChild size="lg" className="shadow-card shrink-0">
+            <Link to="/#request"><Wrench className="h-4 w-4" />Оставить заявку</Link>
+          </Button>
+        </div>
+      </section>
+
       <section className="container py-10 md:py-14">
         <div className="grid lg:grid-cols-[1fr_360px] gap-6">
           <div className="space-y-6">
@@ -268,14 +284,7 @@ const Calculator = () => {
                 </div>
               </div>
 
-              <div className="mt-5 flex flex-wrap gap-2">
-                <Button asChild className="flex-1">
-                  <Link to="/#request"><Wrench className="h-4 w-4" />Оставить заявку</Link>
-                </Button>
-                <Button asChild variant="outline" size="icon">
-                  <a href={PHONE_HREF} aria-label="Позвонить"><Phone className="h-4 w-4" /></a>
-                </Button>
-              </div>
+
 
               <div className="mt-4 flex gap-2">
                 <Button variant="outline" size="sm" onClick={reset} className="flex-1">Сбросить</Button>
