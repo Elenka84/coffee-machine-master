@@ -139,7 +139,7 @@ const Index = () => {
               <Button asChild size="sm" variant="outline" className="inline-flex">
                 <Link to="/calculator"><CalcIcon className="h-4 w-4" /><span className="hidden sm:inline">Рассчитать стоимость</span></Link>
               </Button>
-              <Button asChild size="sm" className="hidden sm:inline-flex">
+              <Button asChild size="sm" variant="outline" className="hidden sm:inline-flex">
                 <a href="#request">Оставить заявку</a>
               </Button>
               <Button asChild size="icon" variant="outline" className="sm:hidden">
@@ -182,7 +182,7 @@ const Index = () => {
             </div>
 
             <div className="mt-8 flex flex-wrap gap-3 animate-fade-up" style={{ animationDelay: "220ms", animationFillMode: "backwards" }}>
-              <Button asChild size="lg" className="h-12 px-6 hover:scale-[1.02] transition-transform">
+              <Button asChild size="lg" variant="outline" className="h-12 px-6 hover:scale-[1.02] transition-transform">
                 <a href={PHONE_HREF}><Phone className="h-4 w-4" />Позвонить</a>
               </Button>
               <Button asChild size="lg" variant="outline" className="h-12 px-6 bg-background hover:scale-[1.02] transition-transform">
@@ -277,7 +277,7 @@ const Index = () => {
               </div>
 
               <div className="mt-6">
-                <Button asChild size="lg" className="h-12 px-6 hover:scale-[1.02] transition-transform">
+                <Button asChild size="lg" variant="outline" className="h-12 px-6 hover:scale-[1.02] transition-transform">
                   <Link to="/calculator">
                     <CalcIcon className="h-4 w-4" />
                     Узнать стоимость за 1 минуту
@@ -330,7 +330,7 @@ const Index = () => {
               <div className="font-display text-lg font-semibold text-coffee-dark">Не нашли свою проблему?</div>
               <p className="text-sm text-muted-foreground mt-1">Опишите её — подскажу решение</p>
             </div>
-            <Button asChild size="lg" className="h-12 px-6 hover:scale-[1.02] transition-transform">
+            <Button asChild size="lg" variant="outline" className="h-12 px-6 hover:scale-[1.02] transition-transform">
               <a href="#request">Описать проблему</a>
             </Button>
           </div>
@@ -560,7 +560,7 @@ const Index = () => {
 
       {/* Mobile sticky call bar */}
       <div className="fixed bottom-0 left-0 right-0 z-40 md:hidden border-t border-border bg-background/95 backdrop-blur p-3">
-        <Button asChild size="lg" className="w-full h-12">
+        <Button asChild size="lg" variant="outline" className="w-full h-12 bg-background">
           <a href={PHONE_HREF}><Phone className="h-4 w-4" />Позвонить мастеру</a>
         </Button>
       </div>
