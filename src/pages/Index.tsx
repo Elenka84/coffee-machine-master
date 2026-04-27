@@ -607,11 +607,11 @@ const ContactCard = ({
   <a
     href={href}
     {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-    className="group rounded-xl border border-border/60 bg-background p-6 hover:border-coffee-medium hover:shadow-card hover:-translate-y-0.5 transition-all duration-300"
+    className="group block rounded-xl border-2 border-coffee-dark/40 bg-transparent px-8 py-6 text-center hover:border-coffee-dark hover:-translate-y-0.5 transition-all duration-300"
   >
-    <Icon className="h-6 w-6 text-coffee-medium mx-auto" strokeWidth={1.5} />
-    <div className="mt-4 text-xs uppercase tracking-widest text-muted-foreground">{label}</div>
-    <div className="mt-1 font-medium text-coffee-dark">{value}</div>
+    <Icon className="h-6 w-6 text-coffee-dark mx-auto" strokeWidth={1.75} />
+    <div className="mt-4 text-xs uppercase tracking-widest text-coffee-dark/80 font-semibold">{label}</div>
+    <div className="mt-1 font-semibold text-coffee-dark">{value}</div>
   </a>
 );
 
