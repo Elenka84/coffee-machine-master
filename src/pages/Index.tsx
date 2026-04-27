@@ -300,7 +300,7 @@ const Index = () => {
       </RevealSection>
 
       {/* Problems */}
-      <RevealSection id="services" className="py-20 md:py-28 bg-cream">
+      <RevealSection id="services" className="py-20 md:py-28 bg-problem-section">
         <div className="container">
           <SectionHeader eyebrow="Проблемы" title="Устраню любую проблему с кофемашиной" />
           <p className="mt-4 text-lg text-muted-foreground max-w-2xl">
@@ -313,19 +313,19 @@ const Index = () => {
             {problems.map((p, i) => (
               <Magnet key={p.title} padding={40} magnetStrength={10}>
                 <Card
-                  className="float-card p-6 border-coffee-dark/40 shadow-card hover:shadow-soft hover:-translate-y-0.5 transition-all duration-300 bg-coffee-dark text-primary-foreground h-full"
+                  className="float-card p-6 border-coffee-medium/35 shadow-card hover:shadow-soft hover:-translate-y-0.5 transition-all duration-300 bg-problem-card text-problem-foreground h-full"
                   style={{ "--float-delay": `${i * 60}ms` } as React.CSSProperties}
                 >
-                  <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-primary-foreground/10 mb-4">
-                    <p.icon className="h-5 w-5 text-primary-foreground" strokeWidth={1.5} />
+                  <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-coffee-medium/20 mb-4">
+                    <p.icon className="h-5 w-5 text-coffee-medium" strokeWidth={1.5} />
                   </div>
                   <div className="font-semibold">{p.title}</div>
-                  <div className="mt-1 text-sm text-primary-foreground/70 leading-relaxed">{p.text}</div>
+                  <div className="mt-1 text-sm text-problem-muted leading-relaxed">{p.text}</div>
                 </Card>
               </Magnet>
             ))}
           </div>
-          <div className="mt-8 rounded-2xl border border-border/60 bg-background p-6 md:p-7 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 shadow-card">
+          <div className="mt-8 rounded-2xl border border-coffee-medium/25 bg-problem-panel p-6 md:p-7 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 shadow-card">
             <div>
               <div className="font-display text-lg font-semibold text-coffee-dark">Не нашли свою проблему?</div>
               <p className="text-sm text-muted-foreground mt-1">Опишите её — подскажу решение</p>
