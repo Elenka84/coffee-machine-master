@@ -483,10 +483,10 @@ const Index = () => {
         <div className="container">
           <div className="mx-auto max-w-3xl text-center">
             <SectionHeader eyebrow="Контакты" title="Свяжитесь удобным способом" centered />
-            <p className="mt-6 text-muted-foreground max-w-xl mx-auto">
+            <p className="mt-6 text-coffee-dark max-w-xl mx-auto">
               Работаю по городу и ближайшему району. Формат ремонта уточняется при обращении.
             </p>
-            <div className="mt-4 inline-flex items-center gap-2 text-sm text-coffee-medium">
+            <div className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-coffee-dark">
               <Clock className="h-4 w-4" /> Отвечаю в течение 15 минут
             </div>
             <div className="mt-10 flex flex-wrap justify-center gap-6">
