@@ -1,4 +1,5 @@
-import { Link } from "react-router-dom";
+import { useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { RequestForm } from "@/components/RequestForm";
@@ -95,6 +96,18 @@ const Index = () => {
   const { data: settings } = useSiteSettings();
   const PHONE = settings?.phone ?? DEFAULT_PHONE;
   const PHONE_HREF = settings?.phone_href ?? DEFAULT_PHONE_HREF;
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.hash) {
+      const id = location.hash.slice(1);
+      // wait a tick for content to mount
+      setTimeout(() => {
+        document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
+      }, 50);
+    }
+  }, [location]);
+
 
   const { data: brandsData } = useQuery({
     queryKey: ["public-machines"],
