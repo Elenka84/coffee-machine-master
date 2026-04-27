@@ -168,30 +168,7 @@ const Calculator = () => {
         className="bg-cover bg-center"
         style={{ backgroundImage: `url(${heroBg})` }}
       >
-        <div className="container pt-40 md:pt-44 pb-10 md:pb-14">
-          <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 rounded-full bg-background/70 px-4 py-1.5 text-xs font-medium text-coffee-medium mb-4 border border-border/60">
-              <CalcIcon className="h-3.5 w-3.5" /> Калькулятор
-            </div>
-            <h1 className="hero-title font-display text-3xl md:text-5xl font-semibold text-coffee-dark leading-[1.05]">
-              Калькулятор стоимости ремонта
-            </h1>
-            <p className="mt-4 text-base text-muted-foreground">
-              Без «шок-сумм»: показываем диапазон цены и логичную разбивку. Точная стоимость подтверждается после диагностики.
-            </p>
-            <div className="mt-5 flex flex-wrap gap-2">
-              <span className="inline-flex items-center gap-2 rounded-full border border-border/60 bg-background/70 px-3 py-1.5 text-xs text-muted-foreground">
-                <Clock className="h-3.5 w-3.5" /> 3–5 мин на расчет
-              </span>
-              <span className="inline-flex items-center gap-2 rounded-full border border-border/60 bg-background/70 px-3 py-1.5 text-xs text-muted-foreground">
-                от–до вместо одной цифры
-              </span>
-              <span className="inline-flex items-center gap-2 rounded-full border border-border/60 bg-background/70 px-3 py-1.5 text-xs text-muted-foreground">
-                <Gift className="h-3.5 w-3.5" /> диагностика бесплатно при ремонте
-              </span>
-            </div>
-          </div>
-        </div>
+        <div className="container h-32" />
       </section>
 
       <section className="container py-10 md:py-14">
